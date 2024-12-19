@@ -288,93 +288,139 @@
                                 <div class="card" div id="dias-horarios">
                                     <h2>Días y Horarios</h2>
                                     <form>
-                                        <fieldset>
-                                            <legend>Disponibilidad Diaria</legend>
-                                            <label for="Lunes">Lunes</label>
+                                    <fieldset>
+                                        <legend>Disponibilidad Diaria</legend>
+                                        <div>
                                             <input type="checkbox" id="Lunes" name="Lunes" value="1" checked>
-                                            
-                                            <label for="Martes">Martes</label>
+                                            <label for="Lunes">Lunes</label>
+                                        </div>
+                                        <div>
                                             <input type="checkbox" id="Martes" name="Martes" value="1" checked>
-                                                
-                                            <label for="Miércoles">Miércoles</label>
-                                            <input type="checkbox" id="Miércoles" name="Miércoles" value="1" checked>
-                                                
-                                            <label for="Jueves">Jueves</label>
+                                            <label for="Martes">Martes</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="Miercoles" name="Miercoles" value="1" checked>
+                                            <label for="Miercoles">Miércoles</label>
+                                        </div>
+                                        <div>
                                             <input type="checkbox" id="Jueves" name="Jueves" value="1" checked>
-                                                
-                                            <label for="Viernes">Viernes</label>
+                                            <label for="Jueves">Jueves</label>
+                                        </div>
+                                        <div>
                                             <input type="checkbox" id="Viernes" name="Viernes" value="1" checked>
-                                        </fieldset>
+                                            <label for="Viernes">Viernes</label>
+                                        </div>
+                                    </fieldset>
+
                                         
                                     <fieldset>
                                         <legend>Horario Laboral</legend>
-                                        <label for="8:00-9:00">8:00-9:00</label>
-                                        <input type="checkbox" id="8:00-9:00" name="8:00-9:00" value="1">
-                                            
-                                        <label for="9:00-10:00">9:00-10:00</label>        
-                                        <input type="checkbox" id="9:00-10:00" name="9:00-10:00" value="1">
-                                        
-                                        <label for="10:00-11:00">10:00-11:00</label>
-                                        <input type="checkbox" id="10:00-11:00" name="10:00-11:00" value="1">
-                                        
-                                        <label for="11:00-12:00">11:00-12:00</label>
-                                        <input type="checkbox" id="11:00-12:00" name="11:00-12:00" value="1">
 
-                                        <label for="15:00-16:00">15:00-16:00</label>    
-                                        <input type="checkbox" id="15:00-16:00" name="15:00-16:00" value="1">
-                                        
-                                            <label for="16:00-17:00">16:00-17:00</label>
-                                        <input type="checkbox" id="16:00-17:00" name="16:00-17:00" value="1">
-                                        
-                                            <label for="17:00-18:00">17:00-18:00</label>
-                                        <input type="checkbox" id="17:00-18:00" name="17:00-18:00" value="1">
-                                        
-                                            <label for="18:00-19:00">18:00-19:00</label>
-                                        <input type="checkbox" id="18:00-19:00" name="18:00-19:00" value="1">
-                                        
-                                            <label for="19:00-20:00">19:00-20:00</label>
-                                        <input type="checkbox" id="19:00-20:00" name="19:00-20:00" value="1">
-                                        
-                                            <label for="20:00-21:00">20:00-21:00</label>    
-                                        <input type="checkbox" id="20:00-21:00" name="20:00-21:00" value="1">
-                                </fieldset>
+                                        <div>
+                                            <input type="checkbox" id="8:00-9:00" name="8:00-9:00" value="1">
+                                                <label for="8:00-9:00">8:00-9:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="9:00-10:00" name="9:00-10:00" value="1">
+                                                <label for="9:00-10:00">9:00-10:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="10:00-11:00" name="10:00-11:00" value="1">
+                                                <label for="10:00-11:00">10:00-11:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="11:00-12:00" name="11:00-12:00" value="1">
+                                                <label for="11:00-12:00">11:00-12:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="15:00-16:00" name="15:00-16:00" value="1">
+                                                <label for="15:00-16:00">15:00-16:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="16:00-17:00" name="16:00-17:00" value="1">
+                                                <label for="16:00-17:00">16:00-17:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="17:00-18:00" name="17:00-18:00" value="1">
+                                                <label for="17:00-18:00">17:00-18:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="18:00-19:00" name="18:00-19:00" value="1">
+                                                <label for="18:00-19:00">18:00-19:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="19:00-20:00" name="19:00-20:00" value="1">
+                                                <label for="19:00-20:00">19:00-20:00</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="20:00-21:00" name="20:00-21:00" value="1">
+                                                <label for="20:00-21:00">20:00-21:00</label>
+                                        </div>
+                                    </fieldset>
+
                                     </fieldset>
                             
                         
                             
                                 
                         <!-- Sección 3: Especialidades -->
-                            <div class="card"  id="especialidades">
-                                <h2>Especialidades</h2>
-                                
-                                    <fieldset>
-                                        <legend>Seleccione Especialidades</legend>
-                                            <label for="CoachingEmpresarial">Coaching Empresarial</label>
-                                        <input type="checkbox" id="CoachingEmpresarial" name="CoachingEmpresariala" value="1">
-                                            
-                                            <label for="CoachingPersonal">Coaching Personal</label>        
-                                        <input type="checkbox" id="CoachingPersonal" name="CoachingPersonal" value="2">
-                                        
-                                            <label for="CoachingconInteligenciaEmocional">Coaching con Inteligencia Emocional</label>
-                                        <input type="checkbox" id="CoachingconInteligenciaEmocional" name="CoachingconInteligenciaEmocional" value="3">
-                                        
-                                            <label for="CoachingDeportivo">Coaching Deportivo</label>
-                                        <input type="checkbox" id="CoachingDeportivo" name="CoachingDeportivo" value="4">
-                                        
-                                            <label for="CoachingOntológico'">Coaching Ontológico</label>    
-                                        <input type="checkbox" id="CoachingOntológico" name="CoachingOntológico" value="5">
-                                        
-                                            <label for="CoachingCognitivo">Coaching Cognitivo</label>
-                                        <input type="checkbox" id="CoachingCognitivo" name="CoachingCognitivo" value="6">
-                                        
-                                            <label for="CoachingPNL(ProgramaciónNeurolingüística)">Coaching PNL (Programación Neurolingüística)</label>
-                                        <input type="checkbox" id="CoachingPNL(ProgramaciónNeurolingüística)" name="CoachingPNL(ProgramaciónNeurolingüística)" value="7">
-                                        
-                                            <label for="CoachingCoercitivo">Coaching Coercitivo</label>
-                                        <input type="checkbox" id="CoachingCoercitivo" name="CoachingCoercitivo" value="8">        
-                                    </fieldset>
-                            
-                        </div>
+<div class="card" id="especialidades">
+    <h2>Especialidades</h2>
+
+    <fieldset>
+        <legend>Seleccione Especialidades</legend>
+
+        <div>
+            <input type="checkbox" id="CoachingEmpresarial" name="CoachingEmpresarial" value="1">
+            <label for="CoachingEmpresarial">Coaching Empresarial</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="CoachingPersonal" name="CoachingPersonal" value="2">
+            <label for="CoachingPersonal">Coaching Personal</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="CoachingconInteligenciaEmocional" name="CoachingconInteligenciaEmocional" value="3">
+            <label for="CoachingconInteligenciaEmocional">Coaching con Inteligencia Emocional</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="CoachingDeportivo" name="CoachingDeportivo" value="4">
+            <label for="CoachingDeportivo">Coaching Deportivo</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="CoachingOntológico" name="CoachingOntológico" value="5">
+            <label for="CoachingOntológico">Coaching Ontológico</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="CoachingCognitivo" name="CoachingCognitivo" value="6">
+            <label for="CoachingCognitivo">Coaching Cognitivo</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="CoachingPNL" name="CoachingPNL" value="7">
+            <label for="CoachingPNL">Coaching PNL (Programación Neurolingüística)</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="CoachingCoercitivo" name="CoachingCoercitivo" value="8">
+            <label for="CoachingCoercitivo">Coaching Coercitivo</label>
+        </div>
+    </fieldset>
+</div>
+
                             
                             <button type="submit" title="AltaEspecialista" name="AltaEspecialista">Alta Especialista</button>
                               

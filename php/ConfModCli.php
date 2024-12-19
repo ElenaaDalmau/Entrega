@@ -41,14 +41,14 @@
                 <div class="conf_fafa">
                     <i class="fa-solid fa-pen"></i>
                 </div>
-                <h1 class="conf_titulo">Modificación confirmada del cliente</h1>
+                <h1 class="conf_titulo">Modificación confirmada</h1>
                 <div class="titulo">
                     <?php
-                    echo "<p>Se ha modificado correctamente el cliete " . htmlspecialchars($cliente['Nombre_Cliente']) . " " . htmlspecialchars($cliente['Apellido_Cliente']) . " con DNI " . htmlspecialchars($cliente['DNI_Cliente']) . ".</p>";
+                    echo "<p>Se ha modificado correctamente el cliente</p>";
                     ?>
                 </div>  
                 <div class="pie-form">
-                    <a class="Confirmacion_boton" href="ComoTrabajamos.php">Continuar</a>
+                    <a class="Confirmacion_boton" href="GestionCli.php">Continuar</a>
                 </div>   
             </div>
         </div> 

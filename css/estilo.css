@@ -17,22 +17,32 @@ body{
     line-height: 1.5;
     font-size: 16px;
 }
+
 /*CABECERA - header*/
 #header {
     background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Usamos Flexbox para centrar los elementos */
+    justify-content: space-between; /* Mantiene elementos separados en los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
     padding: 15px 50px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
+    height: 100px;
+}
+
+#header .logo {
+    display: flex; /* Activamos Flexbox */
+    justify-content: center; /* Centra horizontalmente el logo */
+    align-items: center; /* Centra verticalmente el logo */
 }
 
 #header .logo img {
-    max-width: 110px;
+    max-width: 85px; /* Mantiene el tamaño máximo del logo */
+  /*   height: auto; Asegura que la proporción del logo sea correcta */
 }
+
 
 #header nav ul {
     list-style: none;
@@ -40,7 +50,11 @@ body{
     gap: 20px;
 }
 
+/* Ajusta el espaciado entre el icono y el texto */
 #header nav ul li a {
+    display: flex; /* Cambia el comportamiento a flexbox */
+    align-items: center; /* Alinea verticalmente el texto e icono */
+    gap: 8px; /* Agrega un espacio entre el icono y el texto */
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -48,6 +62,12 @@ body{
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
+
+/* Iconos más pequeños si es necesario */
+#header nav ul li a i {
+    font-size: 1.2rem; /* Ajusta el tamaño de los iconos */
+}
+
 
 #header nav ul li a:hover {
     background: #e6dfd8;
@@ -65,20 +85,14 @@ body{
     color: #8c7265;
     font-weight: bold;
 }
-
 /*PIE DE PAGINA*/
+/* Footer permanece al final */
 footer {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to right, #a89584, #8c7265);
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
     color: white;
     text-align: center;
     padding: 10px 0;
-}
-
-footer p {
-    margin: 10px 0;
+    width: 100%;
 }
 
 
@@ -380,6 +394,9 @@ body.Fondo_pago {
     margin-bottom: 5px;
 }
 
+.cajagrande{
+    height: 100%;
+}
 /* Botones */
 .especialista-contenedor a {
     display: inline-block;
@@ -472,6 +489,9 @@ body.Fondo_pago {
 }
 /*CSS DE GESTION DE CLIENTES*/
 /* General Body Styling */
+.CAJAgrandeCLI{
+    height: 727px;
+}
 #gestioncliente {
     font-family: 'Poppins', sans-serif;
     margin: 0;

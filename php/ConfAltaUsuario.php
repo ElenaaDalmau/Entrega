@@ -14,7 +14,7 @@
         die("Conexion fallida: " . mysqli_connect_error());
     }   
       
-?>
+
         if (!$conn) {
             die("Conexion fallida: " . mysqli_connect_error());
         }      

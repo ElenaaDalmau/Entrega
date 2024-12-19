@@ -42,15 +42,15 @@
                 <div class="conf_fafa">
                     <i class="fa-solid fa-pen"></i>
                 </div>
-                <h1 class="conf_titulo">Modificación confirmada del especialista</h1>
+                <h1 class="conf_titulo">Modificación confirmada</h1>
                 <div class="titulo">
                     <?php
-                    echo "<p>Se ha modificado correctamente el especialista " . htmlspecialchars($especialista['Nombre_Especialista']) . " " . htmlspecialchars($especialista['Apellido_Especialista']) . " con DNI " . htmlspecialchars($especialista['DNI_Especialista']) . ".</p>";
+                    echo "<p>Se ha modificado correctamente el especialista";
                     ?>
                 </div>
                         
                 <div class="pie-form">
-                    <a class="Confirmacion_boton" href="ComoTrabajamos.php">Continuar</a>
+                    <a class="Confirmacion_boton" href="GestionEspe.php">Continuar</a>
                 </div>   
             </div>
         </div> 

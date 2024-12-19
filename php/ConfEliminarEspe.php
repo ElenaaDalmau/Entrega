@@ -56,7 +56,7 @@
                     </div>
                             
                     <div class="pie-form">
-                        <a class="Confirmacion_boton" href="ComoTrabajamos.php">Continuar</a>
+                        <a class="Confirmacion_boton" href="GestionEspe.php">Continuar</a>
                     </div>   
                 </div>
             </div> 

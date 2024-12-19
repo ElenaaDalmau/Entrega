@@ -106,7 +106,7 @@ if (isset($_REQUEST['Modificar'])) {
 
         // Ejecutamos la consulta
         if (mysqli_stmt_execute($stmt)) {
-            echo "Especialista actualizado correctamente.";
+            header("Location:ConfModEspe.php");
         } else {
             // Muestra el error de ejecución
             echo "Error al ejecutar la consulta: " . mysqli_stmt_error($stmt);
