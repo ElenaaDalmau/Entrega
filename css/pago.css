@@ -1,0 +1,126 @@
+body.Fondo_pago {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .infoEspecialista {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    margin-right: 20px;
+  }
+  
+  .formularioPago {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  h2, h3 {
+    color: #333;
+    border-bottom: 2px solid #5c5346;
+    padding-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="submit"] {
+    background-color: #5c5346;
+    color: white;
+    border: none;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #a38383;
+  }
+  
+  .metodo {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .metodo:hover {
+    background-color: #e2e6ea;
+  }
+  
+  .terminos_check {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+    }
+    .infoEspecialista,
+    .formularioPago {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .metodo {
+      width: 48%;
+    }
+  }
+  
+  /* Estilo base para los botones */
+  /* Estilo inicial de los botones */
+  .metodo button {
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid #ccc;        /* Borde gris por defecto */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;     /* Animación suave */
+  }
+  
+  /* Botón activo (solo el clicado) */
+  .metodo button.active {
+    border-color: #d4caba; /* Cambia el borde a verde */
+    background-color: #e8f5e9; /* Color de fondo más suave para el botón activo */
+  }
+  
+  /* Íconos dentro de los botones */
+  .metodo button i {
+    color: #000; /* Color inicial del ícono */
+    pointer-events: none; /* Asegura que el clic solo afecta al botón */
+  }
+  
+  /* Ícono dentro del botón activo */
+  .metodo button.active i {
+    color: #af684c; 
+  }
+  
+  

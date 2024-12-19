@@ -1,0 +1,668 @@
+
+
+/*CABECERA*/
+/*FONDO DE PANTALLA*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, *:before, *:after {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+
+body{
+    background: #f0e9e6;
+    line-height: 1.5;
+    font-size: 16px;
+}
+/*CABECERA - header*/
+#header {
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+}
+
+#header .logo img {
+    max-width: 110px;
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#header nav ul li a:hover {
+    background: #e6dfd8;
+    color: #8c7265;
+    transform: scale(1.1);
+}
+
+.lenguage-selector select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #e6dfd8;
+    color: #8c7265;
+    font-weight: bold;
+}
+
+/*PIE DE PAGINA*/
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #a89584, #8c7265);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+
+
+ 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    #header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+/*CSS DE PAGO*/
+body.Fondo_pago {
+    background: linear-gradient(to bottom right, #1e1e30, #242831);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 50px 0; /* Ajusta el espaciado superior e inferior */
+    display: flex;
+    flex-direction: column; /* Asegura apilamiento de contenedor y footer */
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #161b21;
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 900px;
+    margin-bottom: 20px; /* Espaciado para el footer */
+}
+
+.infoEspecialista, .formularioPago {
+    flex: 1;
+    margin: 10px;
+}
+
+.infoEspecialista {
+    background: #1e1e30;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    align-items: center; /* Alinea horizontalmente el contenido */
+    min-height: 250px; /* Altura mínima ajustada */
+    margin-top: 20px; /* Desplaza hacia abajo */
+}
+
+.infoEspecialista h2, .formularioPago h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #eb6532;
+}
+
+.infoEspecialista input, .DatosCliente input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 5px;
+    background: #242831;
+    color: #fff;
+}
+
+.metodo button {
+    width: 40px;
+    height: 40px;
+    background: #3a3a5e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.metodo button:hover {
+    background: #eb6532;
+}
+
+.DatosCliente {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.terminos_check {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre el checkbox y el texto */
+    font-size: 12px;
+    color: #ccc;
+}
+
+.terminos_check input[type="checkbox"] {
+    width: 15px;
+    height: 15px; /* Tamaño reducido del checkbox */
+}
+
+.button_contenedor {
+    display: flex;
+    justify-content: center; /* Centra el botón */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+.button_contenedor input[type="submit"] {
+    padding: 6px 12px; /* Botón más pequeño */
+    font-size: 12px; /* Texto más pequeño */
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #eb6532, #eb6532);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.button_contenedor input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+
+/* CSS DE FUNCIONES */
+#management-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #5f534e, #caa061); /* Fondo en degradado */
+}
+
+#management-section h2 {
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+#management-section .options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#management-section .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#management-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+#management-section .card i {
+    color: #8f9bb3;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+#management-section .card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#management-section .card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#management-section .card a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #8f9bb3;
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#management-section .card a:hover {
+    background: #d39b48;
+    transform: scale(1.05);
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    #management-section .options {
+        flex-direction: column;
+    }
+
+    #management-section .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+/*CSS DE GESTION DE ESPECIALISTA*/
+/* General Body Styling */
+#gestioncliente {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4f0; /* Fondo claro */
+    color: #5c5346;
+}
+
+/* Título Principal */
+.titulos {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #5c5346;
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.titulos::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #4e3636; /* Línea roja debajo del título */
+    margin: 10px auto;
+}
+
+/* Contenedor principal */
+#fondo_listado {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Separación entre tarjetas */
+    justify-content: center;
+}
+
+/* Tarjetas */
+.especialista-contenedor {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 300px; /* Ancho fijo para las tarjetas */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.especialista-contenedor:hover {
+    transform: translateY(-10px); /* Efecto flotante */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.especialista-contenedor h5 {
+    font-size: 1.2rem;
+    color: #6e3131; /* Título en rojo */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.especialista-contenedor p {
+    font-size: 1rem;
+    color: #7b6f62; /* Texto gris */
+    margin-bottom: 10px;
+}
+
+.especialista-contenedor ul {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+}
+
+.especialista-contenedor ul li {
+    font-size: 0.9rem;
+    color: #7b6f62;
+    margin-bottom: 5px;
+}
+
+/* Botones */
+.especialista-contenedor a {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+/* Botón Modificar */
+
+.especialista-contenedor .PRIMERO {
+    background-color: #bbd3e9; /* Azul suave */
+    color: #000000; /* Texto blanco */
+}
+
+.especialista-contenedor .PRIMERO:hover {
+    background-color: #afbdc9; /* Hover azul más oscuro */
+    color: #ffffff;
+}
+
+/* Botón Pedir Cita */
+.button-container {
+    margin-top: 15px; /* Espaciado superior */
+    text-align: center; /* Centrado del botón */
+}
+
+.btn-pedir-cita {
+    background-color: #6e3131; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.btn-pedir-cita:hover {
+    background-color: #b34545; /* Cambio de color al pasar */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+.Añadir3{
+    background-color: #d9534f; /* Rojo suave */
+    color: #ffffff;
+
+}
+
+.Añadir3:hover{
+    background-color: #d9534f; /* Rojo suave */
+    color: #ffffff;
+    
+}
+
+/* Botón Eliminar */
+.especialista-contenedor .SEGUNDO {
+    background-color: #d9534f; /* Rojo suave */
+    color: #ffffff;
+}
+
+.especialista-contenedor .SEGUNDO:hover {
+    background-color: #d69795; /* Hover rojo más oscuro */
+    color: #000000; /* Texto blanco */
+}
+
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    #fondo_listado {
+        flex-direction: column; /* Una sola columna en pantallas pequeñas */
+        gap: 20px; /* Menor separación */
+    }
+
+    .especialista-contenedor {
+        width: 90%; /* Más ancho en pantallas pequeñas */
+        margin: 0 auto;
+    }
+}
+/*CSS DE GESTION DE CLIENTES*/
+/* General Body Styling */
+#gestioncliente {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4f0; /* Fondo claro */
+    color: #5c5346;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe toda la ventana */
+}
+
+/* Contenedor Principal */
+#listado-clientes {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+/* Título Principal */
+.titulos {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #5c5346;
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.titulos::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #cb2d3e; /* Línea roja debajo del título */
+    margin: 10px auto;
+}
+
+/* Contenedor de Tarjetas */
+#fondo_listado {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Espaciado entre tarjetas */
+    justify-content: center;
+}
+
+/* Tarjetas */
+.cliente-contenedor {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 300px; /* Ancho fijo de las tarjetas */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cliente-contenedor:hover {
+    transform: translateY(-10px); /* Efecto flotante */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cliente-contenedor h5 {
+    font-size: 1.2rem;
+    color: #2c211f; /* Título en rojo */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.cliente-contenedor p {
+    font-size: 1rem;
+    color: #7b6f62; /* Texto gris */
+    margin-bottom: 10px;
+}
+
+/* Botones */
+.cliente-contenedor a {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+/* Botón Modificar */
+.cliente-contenedor .PRIMEROCL {
+    background-color: #5a9bd5; /* Azul suave */
+    color: #ffffff; /* Texto blanco */
+}
+
+.cliente-contenedor .PRIMEROCL:hover {
+    background-color: #37419e; /* Hover azul más oscuro */
+    color: #ffffff;
+}
+
+/* Botón Eliminar */
+.cliente-contenedor .SEGUNDOCL{
+    background-color: #967371; /* Rojo suave */
+}
+
+.cliente-contenedor .SEGUNDOCL:hover {
+    background-color: #c9302c; /* Hover rojo más oscuro */
+}
+
+
+
+/*CSS DE FUNCIONES DE ESPECIALISTAS*/
+/* Estilos Generales */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4f0; /* Fondo claro */
+}
+
+#FuncionesOpciones {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #5f534e, #caa061); /* Fondo en degradado */
+}
+
+#FuncionesOpciones h2 {
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.opcion-caja {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opcion-caja:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.opcion-caja i {
+    color: #d39b48;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.opcion-caja h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.opcion-caja p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.opcion-caja a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #8f9bb3;
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.opcion-caja a:hover {
+    background: #d39b48;
+    transform: scale(1.05);
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .opciones {
+        flex-direction: column;
+    }
+
+    .opcion-caja {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://weloveiconfonts.com/api/?family=fontawesome');
+
+/* Reset general */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #000;
+    background: #E7E3DA;
+}
+
+/* Cabecera */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #645047;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.logo img {
+    height: 70px;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li {
+    display: inline-block;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+nav ul li a:hover {
+    color: #000;
+    background-color: rgb(221, 190, 155);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Fondo y separadores */
+header {
+    background: url("../img/iniciofoto.jpg") no-repeat center/cover;
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+hr.highlight {
+    height: 5px;
+    width: 50px;
+    background: #63483c;
+    margin: 20px auto;
+    border: none;
+    border-radius: 2px;
+}
+
+/* Contenedor "Acerca de" */
+#about {
+    padding: 50px 20px;
+    background: #E7E3DA;
+    text-align: center;
+}
+#about h2 {
+    color: black;
+    margin-bottom: 20px;
+}
+.GlobalApartadosInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.GlobalApartadosInfo li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.GlobalApartadosInfo li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.GlobalApartadosInfo li .lock-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+.TitulosApartados {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+.TextExplApartados p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Formulario */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    background: #E7E3DA;
+    gap: 20px;
+}
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+form h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+form button {
+    width: 100%;
+    padding: 10px;
+    background: #645047;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+form button:hover {
+    background: #8c7265;
+}
+form a {
+    color: #645047;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: block;
+}
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .GlobalApartadosInfo {
+        grid-template-columns: 1fr;
+    }
+}

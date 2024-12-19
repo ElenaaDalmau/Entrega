@@ -1,0 +1,164 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/*CABECERA - header*/
+#header {
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+}
+
+#header .logo img {
+    max-width: 110px;
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#header nav ul li a:hover {
+    background: #e6dfd8;
+    color: #8c7265;
+    transform: scale(1.1);
+}
+
+.lenguage-selector select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #e6dfd8;
+    color: #8c7265;
+    font-weight: bold;
+}
+
+/* Contenedor Principal */
+.container {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Tarjetas */
+.card {
+    background: #ffffff;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    text-align: left;
+    font-weight: 600;
+    color: #555555;
+    font-size: 0.9rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #f9f9f9;
+}
+
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+form button {
+    padding: 12px 20px;
+    background: #ff6600;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background: #cc5200;
+    transform: translateY(-3px);
+}
+
+/* Fieldsets */
+form fieldset {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+form fieldset legend {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #666666;
+}
+
+/* Esquema de colores por tarjeta */
+#registro-especialistas {
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+#dias-horarios {
+    background: linear-gradient(to bottom, #ffffff, #e9f7ff);
+}
+
+#especialidades {
+    background: linear-gradient(to bottom, #ffffff, #fff5f8);
+}

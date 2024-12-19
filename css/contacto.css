@@ -1,0 +1,223 @@
+*, *:before, *:after {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+/*CABECERA - header*/
+#header {
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+}
+
+#header .logo img {
+    max-width: 110px;
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#header nav ul li a:hover {
+    background: #e6dfd8;
+    color: #8c7265;
+    transform: scale(1.1);
+}
+
+.lenguage-selector select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #e6dfd8;
+    color: #8c7265;
+    font-weight: bold;
+}
+
+/* SECCIÓN DE CONTACTO */
+section#contactoES, #contactoCLI {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;    /* Centrar verticalmente */
+    height: 100vh;          /* Ocupa toda la ventana */
+    padding: 20px;          /* Espaciado */
+    background-color: #222;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section#contactoCLI{
+    background-image: url(../img/definitivaCreo.jpg);    
+}
+section#contactoES{
+    background-image: url(../img/ContactoESPE2.jpg);
+}
+section#contactoES .form-container, section#contactoCLI .form-container {
+    display: flex;
+    flex-direction: column; /* Elementos uno debajo de otro */
+    align-items: center;    /* Centrar horizontalmente */
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    width: 100%;
+    max-width: 600px; /* Ancho máximo */
+    
+}
+
+section#contactoES .form-container h2, section#contactoCLI .form-container h2 {
+    color: #255539;
+    margin-bottom: 20px;
+}
+
+section#contactoES .formESPcon, section#contactoCLI .formESPcon{
+    width: 100%;
+    margin-bottom: 15px; /* Espaciado entre campos */
+}
+
+section#contactoES .formESPcon input,
+section#contactoES .formESPcon textarea,
+section#contactoCLI .formESPcon input,
+section#contactoCLI .formESPcon textarea
+{
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    color: #333;
+    /*background: rgb(227, 231, 228);  Fondo gris muy sutil */
+    transition: box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
+}
+
+section#contactoES .formESPcon input:focus,
+section#contactoES .formESPcon textarea:focus,
+section#contactoCLI .formESPcon input:focus,
+section#contactoCLI .formESPcon textarea:focus
+{
+    border-color: #8f3535;
+    box-shadow: 0 0 5px #8f3535;
+    outline: none;
+}
+
+section#contactoES .formESPcon textarea, section#contactoCLI .formESPcon textarea {
+    height: 150px; /* Altura de la caja de texto */
+    resize: none;  /* No permite redimensionar */
+}
+
+section#contactoES button[type="submit"] {
+    background-color: #944141;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    margin: 0 auto; /* Centrar el botón */
+    display: block;
+}
+section#contactoCLI button[type="submit"] {
+    background-color: #944141;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    margin: 0 auto; /* Centrar el botón */
+    display: block;
+}
+
+section#contactoES button[type="submit"]:hover {
+    background-color: #464b3e;
+}
+
+section#contactoCLI button[type="submit"]:hover {
+    background-color: #464b3e;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Caja de mensajes */
+.caja-mensajes {
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    display: inline-block; /* Tamaño adaptado al contenido */
+    margin-bottom: 20px; /* Espaciado con el formulario */
+    text-align: center; /* Centrado del contenido */
+}
+
+.caja-mensajes h2 {
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    color: #4c4b63; /* Color del texto */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.caja-mensajes h3 {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    color: #555; /* Color gris oscuro */
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    font-weight: 400; /* Peso más ligero */
+}
+
+/*PIE DE PAGINA*/
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #a89584, #8c7265);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 10px 0;
+}

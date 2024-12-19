@@ -1,0 +1,245 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4f0;
+    color: #5c5346;
+}
+
+
+/*CABECERA - header*/
+#header {
+    background: linear-gradient(to right, #a89584, #8c7265);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+}
+
+#header .logo img { /*Logo Imagen*/
+    max-width: 110px;
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#header nav ul li a:hover {
+    background: #e6dfd8;
+    color: #8c7265;
+    transform: scale(1.1);
+}
+
+.lenguage-selector select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #e6dfd8;
+    color: #8c7265;
+    font-weight: bold;
+}
+
+/*PIE DE PAGINA*/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #a89584, #8c7265);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.Tabla-cita {
+    max-width: 800px;
+    margin: 0 auto; /* Elimina el margen superior */
+    padding: 20px; /* Asegura que haya suficiente espacio dentro del contenedor */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.Tabla-cita h1 {
+    font-size: 2.5rem;
+    color: #5c5346;
+    margin: 10px 0; /* Reduce el margen superior e inferior del título */
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.Lineas {
+    height: 4px;
+    background: #4e3636;
+    width: 100px;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+
+#contenedor-Tabla {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cita-tabla {
+    width: 100%; /* Ancho al 100% de su contenedor */
+    max-width: 500px; /* Limita el tamaño máximo de la caja */
+    margin: 20px auto; /* Centrado de la caja */
+    padding: 10px 15px; /* Reducción del padding para hacerla más compacta */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cita-tabla:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cita-tabla h5 {
+    font-size: 1rem; /* Reducir el tamaño del texto en la caja */
+    color: #5c5346;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.cita-tabla p {
+    font-size: 0.95rem; /* Ajuste para que el texto sea un poco más pequeño */
+    color: #5c5346;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.cita-separador {
+    width: 100%;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cita-separador:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre botones */
+    margin-top: 20px;
+}
+
+.boton {
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #6e3131;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none; /* Quitar bordes */
+    margin-bottom: 14px;
+}
+
+.boton:hover {
+    background-color: #b34545;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .Tabla-cita {
+        width: 90%;
+    }
+
+    #contenedor-Tabla {
+        width: 100%;
+    }
+
+    .cita-tabla {
+        width: 100%;
+    }
+
+    .botones-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.icono-separador {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #6e3131;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icono-separador i:hover {
+    transform: scale(1.2);
+    color: #b34545;
+}
+/* Eliminar puntos de listas desordenadas */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Si necesitas quitar los puntos de la lista de enlaces en el header */
+#header nav ul {
+    list-style: none;  /* Elimina los puntos */
+    padding: 0;
+    margin: 0;
+}
+
+/* Si estás usando íconos o cualquier tipo de lista, elimina la decoración de lista */
+#header nav ul li {
+    list-style: none;  /* Elimina los puntos de la lista */
+    display: inline-block; /* Para que se muestren los elementos en una fila */
+    margin-right: 15px; /* Espacio entre los elementos */
+}
+
+#header nav ul li a {
+    text-decoration: none; /* Evita que los enlaces tengan subrayado */
+    color: #000000; /* Puedes cambiarlo al color que desees */
+}
+
+/* También podrías ajustar el espaciado de los enlaces para hacer que se vea más limpio */
+#header nav ul li a:hover {
+    color: #b34545; /* Cambia el color al pasar el mouse */
+}
