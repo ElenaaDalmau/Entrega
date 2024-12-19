@@ -19,18 +19,27 @@
 #header {
     background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Usamos Flexbox para centrar los elementos */
+    justify-content: space-between; /* Mantiene elementos separados en los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
     padding: 15px 50px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
+    height: 100px;
+}
+
+#header .logo {
+    display: flex; /* Activamos Flexbox */
+    justify-content: center; /* Centra horizontalmente el logo */
+    align-items: center; /* Centra verticalmente el logo */
 }
 
 #header .logo img {
-    max-width: 110px;
+    max-width: 85px; /* Mantiene el tamaño máximo del logo */
+  /*   height: auto; Asegura que la proporción del logo sea correcta */
 }
+
 
 #header nav ul {
     list-style: none;
@@ -38,7 +47,11 @@
     gap: 20px;
 }
 
+/* Ajusta el espaciado entre el icono y el texto */
 #header nav ul li a {
+    display: flex; /* Cambia el comportamiento a flexbox */
+    align-items: center; /* Alinea verticalmente el texto e icono */
+    gap: 8px; /* Agrega un espacio entre el icono y el texto */
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -46,6 +59,12 @@
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
+
+/* Iconos más pequeños si es necesario */
+#header nav ul li a i {
+    font-size: 1.2rem; /* Ajusta el tamaño de los iconos */
+}
+
 
 #header nav ul li a:hover {
     background: #e6dfd8;
@@ -83,19 +102,28 @@
 }
 
 /* PIE DE PAGINA - Footer */
+/* Aseguramos que el HTML y el BODY ocupen el 100% del alto */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenedor principal ocupa el espacio disponible */
+main {
+    flex: 1; /* Esto hace que el main crezca para llenar el espacio disponible */
+}
+
+/* Footer permanece al final */
 footer {
-    bottom: 0;
-    left: 0;
-    width: 100%;
     background: linear-gradient(to right, #a89584, #8c7265);
     color: white;
     text-align: center;
     padding: 10px 0;
+    width: 100%;
 }
 
-footer p {
-    margin: 10px 0;
-}
 
 
 
@@ -171,11 +199,7 @@ footer p {
   font-weight: 700;
   text-transform: uppercase;
 }
-.logo img {
-    height: 70px;
-    margin-top: -18px
-    ;
-}
+
 
 #nav-bg {
   background: #645047;
@@ -193,6 +217,7 @@ header {
   background-size: cover;
   padding: 10em 0 8em;
   z-index: 2;
+  
 }
 
 header h1 {
@@ -1491,11 +1516,11 @@ line-height: 50px;
 
 /* CSS DE FUNCIONES */
 #management-section {
-    padding: 50px 20px;
+    padding: 190px 70px;
 
     text-align: center;
     background: linear-gradient(to bottom, #5f534e, #caa061); /* Fondo en degradado */
-    height: 701px;
+    height: 100%;
 }
 
 #management-section h2 {
