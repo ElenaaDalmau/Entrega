@@ -117,7 +117,7 @@ main {
 
 /* Footer permanece al final */
 footer {
-    background: linear-gradient(to right, #a89584, #8c7265);
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
     color: white;
     text-align: center;
     padding: 10px 0;

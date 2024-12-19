@@ -27,43 +27,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo2.css">
+    <link rel="stylesheet" href="css/inicio.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
 
-<!--CABECERA-->
 <div id="header">
         <div class="logo">
-            <img src="../img/logo.png" alt="COACHING SL">
+            <img src="img/logo.png" alt="COACHING SL">
         </div>
         <nav>
             <ul>
                 <?php
-                if ($_SESSION['Tipo'] == "cliente") { // Si es Admin, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='Contacto.php'><i class='fa fa-phone-square'></i> <span data-translate='contacto'>Puesta en contacto</span></a></li>";
-                    echo "<li><a href='ListadoEspe.php'><i class='fa fa-address-book'></i> <span data-translate='especialistas'>Especialistas</span></a></li>";
-                    echo "<li><a href='Calendario.php'><i class='fa fa-calendar'></i> <span data-translate='calendario'>Calendario</span></a></li>";
-                    echo '<br>';
-                }
-
-                if ($_SESSION['Tipo'] == "admin") { // Si es Admin, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='FuncionesAdmin.php'><i class='fa fa-address-book'></i><span data-translate='ADMIN'>Admin</span></a></li>";
-                    echo '<br>';
-                }
-                if ($_SESSION['Tipo'] == "espe") { // Si es Especialista, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='FuncionesEspe.php'><i class='fa fa-address-book'></i><span data-translate='espe'>espe</span></a></li>";
-                    echo '<br>';
-                }
+                    echo "<li><a href=''><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                //Para controlar el acceso de los usuarios no registrados dentro de nuestra página, hemos decidido que 
+                //solo muestre este enlace como posible ruta
                 ?>
+                
                 <li>               
                     <div class="lenguage-selector">
                         <label for="lenguage"></label>
@@ -82,7 +64,6 @@
             </ul>
         </nav>
     </div>
-
 
 <div class="container" id="container">
 
@@ -113,14 +94,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) 
 
     if (mysqli_stmt_execute($stmt)) {
         // Destruir cualquier sesión activa
-        session_unset();
-        session_destroy();
-        session_start();
+       
 
         // Establecer nueva sesión para el cliente registrado
         $_SESSION['DNI_Cliente'] = $DNI_Cliente;
         $_SESSION['Tipo'] = $Tipo; // Cliente
-        header("Location: ConfAltaUsuario.php?Nombre_Cliente=$Nombre_Cliente");
+        header("Location: php/ConfAltaUsuario.php?Nombre_Cliente=$Nombre_Cliente");
         exit;
     } else {
         echo "<script>alert('Error al registrar usuario');</script>";
@@ -162,11 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) 
            if ($result && mysqli_num_rows($result) > 0) {
                $row = mysqli_fetch_assoc($result);
                if ($Contrasena_Cliente === $row['Contrasena_Cliente']) {
-                   // Destruir cualquier sesión activa
-                   session_unset();
-                   session_destroy();
-                   session_start();
-       
+                 
                    // Establecer nueva sesión con los datos del usuario
                    $_SESSION['DNI_Cliente'] = $row['DNI_Cliente'];
                    $_SESSION['Tipo'] = $row['Tipo'];
@@ -185,9 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) 
                } else {
                    echo "<script>alert('Dato incorrecta');</script>";
                }
-           
            }
-       
        ?>
        
         <form action="" method="post">
@@ -199,5 +172,83 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) 
         <a href="php/inicioESPE.php">Iniciar Sesión Especialista</a>
     </div>
 </div>
+
+
+<hr class="highlight"/> <!-- SEPARADOR-->
+
+<section id="about">
+        <div class="container">
+            <div class="explicacionQueVasAEncontrar">
+                <h2>¿Qué vas a encontrar aquí dentro?</h2>
+                <p>¿Porqué esta página web y no otra página? ¿Porqué nuestros servicios y no otros? A continuación, te explicaremos el porqué deberías de escogernos a nosotros, y no a cualquier otra empresa:</p>
+            </div>
+        
+            <br>
+            <hr class="highlight"/> <!-- SEPARADOR-->
+            <br>
+
+            <ul class="GlobalApartadosInfo">
+            <li>
+                <i class="fa-solid fa-user-tie lock-icon"></i>
+                <h4 class="TitulosApartados">1. Ayuda profesional elegida por ti</h4>
+                <div class="TextExplApartados">
+                    <p>Aquí dentro, podrás escoger entre diversos profesionales aquel que creas que es el indicado para ti.</p>
+                </div>
+            </li>      
+            <li>
+                <i class="fa-solid fa-book-open lock-icon"></i>
+                <h4 class="TitulosApartados">2. La especialidad que más prefieras</h4>
+                <div class="TextExplApartados">
+                    <p>Podrás investigar que servicios ofrecemos y, de entre todas las opciones, escoger aquella que creas que se adapta mejor a tus necesidades.</p>
+                </div>
+            </li>
+                <li>
+                <i class="fa-regular fa-lightbulb lock-icon"></i>
+                <h4 class="TitulosApartados">3. ¿No sabes que hacer?</h4>
+                <div class="TextExplApartados">
+                    <p>Ofrecemos la posibilidad de contactar con nosotros para pedir consejos. ¡Nosotros siempre estaremos dispuestos a ayudarte!</p>
+                </div>
+                </li>
+        
+                <li>
+                <i class="fa-solid fa-calendar-days lock-icon"></i>
+                <h4 class="TitulosApartados">4. Modificar fechas</h4>
+                <div class="TextExplApartados">
+                    <p>Si has reservado una cita y, cuando se acerca la fecha, te das cuenta que finalmente no podrás asistir, ¡no te preocupes! Ofrecemos la opción de anular citas programadas sin consecuencias.</p>
+                </div>
+                </li>
+        
+                <li>
+                <i class="fa-solid fa-lock lock-icon"></i>
+                <h4 class="TitulosApartados">5. Privacidad</h4>
+                <div class="TextExplApartados">
+                    <p>Ofrecemos privacidad con todo aquello que cuentes: nadie se va a enterar de las cosas que comentas o explicas con nuestros especialistas.</p>
+                </div>
+                </li>
+        
+                <li>
+                <i class="fa-regular fa-credit-card lock-icon"></i>
+                <h4 class="TitulosApartados"> 6. Método de pago</h4>
+                <div class="TextExplApartados">
+                    <p>Podrás escoger que método de pago deseas utilizar, pudiendo pagar en efectivo o desde la web. Ofrecemos la opción de poder pagar una cantidad antes de realizar la sesión.</p>
+                </div>
+                </li>
+            </ul>
+        </div>
+      </section>
+
+        <br>
+            <hr class="highlight"/> <!-- SEPARADOR-->
+        <br>
+
+
+<!-- PIE DE PAGINA -->
+    <footer>
+        Todos los derechos reservados | Coaching SL Copyright © 2024
+    </footer>
+
+<!-- Link a JavaScript -->
+    <script src="../JS/traducciones.js"></script>
+
 </body>
 </html>
