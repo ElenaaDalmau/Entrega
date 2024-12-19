@@ -430,15 +430,20 @@ body.Fondo_pago {
 }
 
 .Añadir3{
-    background-color: #d9534f; /* Rojo suave */
-    color: #ffffff;
-
+    background-color: #6a5245;
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
 .Añadir3:hover{
-    background-color: #d9534f; /* Rojo suave */
+    background-color: #915a3c; /* Rojo suave */
     color: #ffffff;
-    
 }
 
 /* Botón Eliminar */

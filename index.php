@@ -17,7 +17,6 @@
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -64,6 +63,17 @@
             </ul>
         </nav>
     </div>
+
+
+    <header>
+        <div class="container">
+          <h1>COACHING SL</h1>
+          <p class="frase_inicio">¡Bienvenido a la página que te va a cambiar la forma de ver tu vida!</p>
+        </div>
+    </header>
+
+      <hr class="highlight"/> <!-- SEPARADOR-->
+
 
 <div class="container" id="container">
 
