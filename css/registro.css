@@ -1,164 +1,152 @@
-/* General Styling */
+/* Estilos generales */
 body {
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f3f4f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
+    background-color: #f5ebe3;
+    color: #5b4636;
 }
-/*CABECERA - header*/
+
+h2 {
+    color: #5b4636;
+}
+
+/* Cabecera */
 #header {
-    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
-    color: white;
+    background-color: #a4876e;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: "Poppins", sans-serif;
-    text-transform: uppercase;
 }
 
 #header .logo img {
-    max-width: 110px;
+    height: 40px;
 }
 
 #header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#header nav ul li {
+    margin: 0 15px;
 }
 
 #header nav ul li a {
     text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-#header nav ul li a:hover {
-    background: #e6dfd8;
-    color: #8c7265;
-    transform: scale(1.1);
-}
-
-.lenguage-selector select {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    background: #e6dfd8;
-    color: #8c7265;
+    color: #fff;
     font-weight: bold;
 }
 
-/* Contenedor Principal */
-.container {
-    width: 90%;
-    max-width: 400px;
+.lenguage-selector {
+    margin-left: auto;
+}
+
+/* Contenedor del formulario */
+#registro-especialistas {
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+.card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
-
-/* Tarjetas */
-.card {
     background: #ffffff;
-    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 51px 317px;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+.login{
+    display: flex;
+    justify-content: center;
 }
 
 .card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #333333;
+    margin-bottom: 10px;
+    justify-content: space-around;
+    display: flex;
 }
 
-/* Formularios */
 form {
+   /* display: grid;*/
+    gap: 20px;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 form label {
-    text-align: left;
-    font-weight: 600;
-    color: #555555;
-    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 form input[type="text"],
 form input[type="email"],
-form input[type="password"] {
+form input[type="tel"],
+form input[type="date"],
+form input[type="password"],
+form input[type="number"] {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-form input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-form button {
-    padding: 12px 20px;
-    background: #ff6600;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
+fieldset {
     border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    margin: 0;
+    padding: 0;
 }
 
-form button:hover {
-    background: #cc5200;
-    transform: translateY(-3px);
-}
-
-/* Fieldsets */
-form fieldset {
-    border: 1px solid #cccccc;
-    border-radius: 10px;
-    padding: 15px;
+legend {
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-form fieldset legend {
-    font-size: 1rem;
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    grid-column: span 3;
+    padding: 10px;
+    background-color: #5b4636;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #a4876e;
+}
+
+.pie-form a {
+    text-decoration: none;
+    color: #a4876e;
     font-weight: bold;
-    color: #666666;
 }
 
-/* Esquema de colores por tarjeta */
-#registro-especialistas {
-    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
-}
-
-#dias-horarios {
-    background: linear-gradient(to bottom, #ffffff, #e9f7ff);
-}
-
-#especialidades {
-    background: linear-gradient(to bottom, #ffffff, #fff5f8);
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #a4876e;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
