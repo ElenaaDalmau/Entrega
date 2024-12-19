@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <!-- Link hacia el archivo de estilos css -->
+    <link rel="stylesheet" href="css/pago1.css">
+    <!-- Link favicon -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <!-- Link para que funcionen los FA FA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="Fondos_Inicios">
+  <!--  <?php
+    session_start();
+    include("./GestionBD/1-conexion.php");
+    if (!$conn) {
+        die("Error en la conexión a la base de datos: " . mysqli_connect_error());
+    }
+    if (!isset($_SESSION['DNI_Cliente'])) {
+        die("Error: DNI_Cliente no está definido.");
+    }
+    $DNI_Cliente = $_SESSION['DNI_Cliente'];
+    $sql_cliente = "SELECT * FROM CLIENTES WHERE DNI_Cliente = '$DNI_Cliente'";
+    $resultado_cliente = mysqli_query($conn, $sql_cliente);
+    if (!$resultado_cliente || mysqli_num_rows($resultado_cliente) == 0) {
+        die("Error: No se encontraron datos del cliente.");
+    }
+    $cliente = mysqli_fetch_assoc($resultado_cliente);
+    $sql_especialista = "SELECT E.Nombre_Especialista, E.Apellido_Especialista, E.Cuota_Especialista
+                         FROM CITAS C
+                         JOIN ESPECIALISTAS E ON C.ID_Especialista_Cita = E.ID_Especialista
+                         WHERE C.ID_Cliente_Cita = (SELECT ID_Cliente FROM CLIENTES WHERE DNI_Cliente = '$DNI_Cliente')
+                         LIMIT 1;";
+    $resultado_especialista = mysqli_query($conn, $sql_especialista);
+    if (!$resultado_especialista || mysqli_num_rows($resultado_especialista) == 0) {
+        die("Error: No se encontraron datos del especialista.");
+    }
+    $especialista = mysqli_fetch_assoc($resultado_especialista);
+    ?> -->
+    <nav class="nav_inicio">
+        <div class="container">
+            <div id="icon" class="logo">
+                <img src="img/logo.png" alt="COACHING SL">
+            </div>
+            <ul>
+                <li><a href="Inicio.php"><i class="fa fa-home"></i> Inicio</a></li>
+                <li><a href="ComoTrabajamos.php"><i class="fa fa-briefcase"></i> ¿Quiénes somos?</a></li>
+                <li><a href="Contacto.php"><i class="fa fa-phone-square"></i> Puesta en contacto</a></li>
+                <li><a href="ListadoEspe.php"><i class="fa fa-address-book"></i> Especialistas</a></li>
+                <li><a href="Calendario.html"><i class="fa fa-calendar"></i> Calendario</a></li>
+                <li class="lenguage-selector">
+                    <select name="lenguage" id="lenguage">
+                        <option value="es" data-translate="espanol">Español</option>
+                        <option value="ca" data-translate="catalan">Catalan</option>
+                        <option value="en" data-translate="ingles">Inglés</option>
+                        <option value="fr" data-translate="frances">Francés</option>
+                        <option value="it" data-translate="italiano">Italiano</option>
+                        <option value="eu" data-translate="euskera">Euskera</option>
+                        <option value="gl" data-translate="gallego">Gallego</option>
+                        <option value="su" data-translate="sueco">Sueco</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr class="highlight"/>
+    <section class="form">
+        <div id="invoice-POS">
+    
+            <center id="top">
+              <div class="logo"></div>
+              <div class="info"> 
+                <h2>Coaching SL</h2>
+              </div><!--End Info-->
+            </center><!--End InvoiceTop-->
+            
+            <div id="mid">
+              <div class="info">
+                <h2>Contact Info</h2>
+                <p> 
+                    Address : Calle Llança 51, Barcelona</br>
+                    Email   : soporte@coaching.com</br>
+                    Phone   : +34 659 98 62 30</br>
+                </p>
+              </div>
+            </div><!--End Invoice Mid-->
+            
+            <div id="bot">
+                            <div id="table">
+                                <table>
+                                    <tr class="tabletitle">
+                                        <td class="item"><h2>Nombre Espacialista</h2></td>
+                                        <td class="Hours"><h2>Horas</h2></td>
+                                        <td class="Rate"><h2>Total</h2></td>
+                                    </tr>
+                                    <tr class="service">
+                                        <td class="tableitem"><p class="itemtext"></p></td>
+                                        <td class="tableitem"><p class="itemtext"></p></td>
+                                        <td class="tableitem"><p class="itemtext"></p></td>
+                                    </tr>
+                                    <tr class="tabletitle">
+                                        <td></td>
+                                        <td class="Rate"><h2>Total</h2></td>
+                                        <td class="payment"><h2></h2></td>
+                                    </tr>
+        
+                                </table>
+                            </div><!--End Table-->
+        
+                            <div id="legalcopy">
+                                <p class="legal"><strong>Thank you for your business!</strong>  Payment is expected within 31 days; please process this invoice within that time. There will be a 5% interest charge per month on late invoices. Marc Perarnau
+                                </p>
+                            </div>
+                        </div><!--End InvoiceBot-->
+          </div><!--End Invoice-->
+    </section>
+</body>
+</html>
