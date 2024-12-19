@@ -83,24 +83,28 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) {
     // Obtener y validar datos del formulario
     $DNI_Cliente = $_POST['DNI_Cliente'];
-    $NumTelefono_Cliente = $_POST['NumTelefono_Cliente'];
-    $Correo_Cliente = $_POST['Correo_Cliente'];
     $Nombre_Cliente = $_POST['Nombre_Cliente'];
     $Apellido_Cliente = $_POST['Apellido_Cliente'];
-    $Contrasena_Cliente = $_POST['Contrasena_Cliente'];
+    
     $FechaNacimiento_Cliente = $_POST['FechaNacimiento_Cliente'];
+    
+    $NumTelefono_Cliente = $_POST['NumTelefono_Cliente'];
+    $Correo_Cliente = $_POST['Correo_Cliente'];
+    
+    $TipoVia_Cliente = $_POST['TipoVia_Cliente'];
     $NombreVia_Cliente = $_POST['NombreVia_Cliente'];
     $NumeroVia_Cliente = $_POST['NumeroVia_Cliente'];
-    $TipoVia_Cliente = $_POST['TipoVia_Cliente'];
+    
+    $Contrasena_Cliente = $_POST['Contrasena_Cliente'];
     $Tipo = "cliente"; // Siempre es cliente para el registro
 
     // Consulta para insertar usuario
     $sql = "INSERT INTO CLIENTES 
-                (DNI_Cliente, NumTelefono_Cliente, Correo_Cliente, Nombre_Cliente, Apellido_Cliente, Contrasena_Cliente, FechaNacimiento_Cliente, NombreVia_Cliente, NumeroVia_Cliente, TipoVia_Cliente, Tipo)
+                (DNI_Cliente, Nombre_Cliente, Apellido_Cliente, FechaNacimiento_Cliente, NumTelefono_Cliente, Correo_Cliente, TipoVia_Cliente, NombreVia_Cliente, NumeroVia_Cliente, Contrasena_Cliente, Tipo)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, 'sssssssssss', $DNI_Cliente, $NumTelefono_Cliente, $Correo_Cliente, $Nombre_Cliente, $Apellido_Cliente, $Contrasena_Cliente, $FechaNacimiento_Cliente, $NombreVia_Cliente, $NumeroVia_Cliente, $TipoVia_Cliente, $Tipo);
+    mysqli_stmt_bind_param($stmt, 'sssssssssss', $DNI_Cliente, $Nombre_Cliente, $Apellido_Cliente, $FechaNacimiento_Cliente, $NumTelefono_Cliente, $Correo_Cliente, $TipoVia_Cliente, $NombreVia_Cliente, $NumeroVia_Cliente, $Contrasena_Cliente, $Tipo);
 
     if (mysqli_stmt_execute($stmt)) {
         // Destruir cualquier sesión activa
@@ -129,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) 
             <input type="text" name="NombreVia_Cliente" placeholder="Nombre de la vía">
             <input type="text" name="NumeroVia_Cliente" placeholder="Número de la vía">
             <input type="text" name="TipoVia_Cliente" placeholder="Tipo de vía">
-            <input type="text" name="Tipo" placeholder="Tipo">
+           <!-- <input type="text" name="Tipo" placeholder="Tipo"> -->
             <button type="submit" name="RegistrarUsuario">Registrarse</button>
         </form>
     </div>
