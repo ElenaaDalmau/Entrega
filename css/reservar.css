@@ -1,17 +1,15 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos generales */
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5ebe3;
+    color: #5b4636;
 }
 
+h2 {
+    color: #5b4636;
+}
 /*CABECERA - header*/
 #header {
     background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
@@ -23,7 +21,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
-    height: 130px;
+    height: 100px;
 }
 
 #header .logo {
@@ -79,8 +77,19 @@ body {
     color: #8c7265;
     font-weight: bold;
 }
+/*PIE DE PAGINA*/
+/* Footer permanece al final */
+footer {
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
 
 
+
+ 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     form {
@@ -96,136 +105,133 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+
 }
 
-
-/* Formulario de Selección de Horario */
-form {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Contenedor del formulario */
+#registro-especialistas {
+    margin: 40px auto;
     padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 51px 317px;
+    padding: 20px;
+
+
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    justify-content: space-around;
+    display: flex;
+}
+
+form {
+   /* display: grid;*/
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 form label {
-    display: block;
-    margin-bottom: 10px;
     font-weight: bold;
-    color: #6a5245;
+    margin-bottom: 5px;
 }
 
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
 form input[type="date"],
-form select {
+form input[type="password"],
+form input[type="number"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
-    background: #f7f7f7;
+    background-color: #fdfdfd;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-form button {
-    background: linear-gradient(to right, #6a5245, #8c7265);
-    color: white;
-    padding: 10px 20px;
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    grid-column: span 3;
+    padding: 10px;
+    background-color: #5b4636;
+    color: #fff;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    width: 100%;
+    font-size: 16px;
 }
 
-form button:hover {
-    background: #8c7265;
-    transform: scale(1.05);
+button:hover {
+    background-color: #a4876e;
 }
 
-/* Información del Especialista */
-.infoEspecialista {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
+.pie-form a {
+    text-decoration: none;
+    color: #a4876e;
+    font-weight: bold;
 }
 
-.infoEspecialista h2 {
-    font-size: 1.5rem;
-    color: #6a5245;
+/* Ajustar el contenedor de especialidades */
+.card#especialidades {
+    width: 80%;  /* Aumentar el ancho */
+    margin: 30px auto;  /* Centrar el contenedor */
+    padding: 40px;  /* Añadir más padding para mayor tamaño */
+    font-size: 18px;  /* Aumentar el tamaño del texto */
+}
+
+/* Aumentar el tamaño de los checkboxes */
+input[type="checkbox"] {
+    transform: scale(1.4);  /* Aumentar tamaño */
+    margin-right: 12px;  /* Separar del texto */
+}
+
+/* Aumentar el espacio entre cada opción */
+fieldset div {
+    margin-bottom: 20px;  /* Más espacio entre filas */
+}
+
+/* Estilizar las leyendas */
+legend {
+    font-size: 22px;
     margin-bottom: 15px;
+    color: #5b4636;
 }
 
-.infoEspecialista input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    background: #f7f7f7;
-    color: #555;
-}
-
-/* Footer permanece al final */
-footer {
-    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #header {
-        flex-direction: column;
-        padding: 15px;
-        text-align: center;
-    }
-
-    #header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    form {
-        padding: 15px;
-        width: 90%;
-    }
-
-    .infoEspecialista {
-        padding: 15px;
-        width: 90%;
-    }
-
-    footer {
-        font-size: 0.8rem;
-    }
-}
-html, body {
-    height: 100%;  /* Asegura que ocupen toda la altura */
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;  /* Empuja el footer hacia abajo */
-}
-
-footer {
-    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
+/* Hacer los labels más grandes */
+form label {
+    font-size: 18px;
+    line-height: 1.8;  /* Espaciado entre líneas */
 }
