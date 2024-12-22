@@ -44,12 +44,12 @@
                 <h1 class="conf_titulo">Confirmación alta especialista</h1>
                 <div class="titulo">
                     <?php
-                        echo "<p>Se ha añadido correctamente el especialista " . htmlspecialchars($especialista['Nombre_Especialista']) . " " . htmlspecialchars($especialista['Apellido_Especialista']) . ".</p>";                     
+                        echo "<p>Se ha añadido correctamente el especialista</p>";                     
                     ?>
                 </div>
                         
                 <div class="pie-form">
-                    <a class="Confirmacion_boton" href="ComoTrabajamos.php">Continuar</a>
+                    <a class="Confirmacion_boton" href="FuncionesAdmin.php">Continuar</a>
                 </div>   
             </div>
         </div> 
