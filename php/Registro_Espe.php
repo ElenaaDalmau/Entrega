@@ -221,7 +221,7 @@
                 
                 if (mysqli_query($conn,$sql))
                 {
-                    header("Location:Calendario.html");
+                    header("Location:ConfAltaEspe.php");
                 }
             
                 else 
