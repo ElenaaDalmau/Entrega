@@ -23,7 +23,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
-    height: 100px;
+    height: 130px;
 }
 
 #header .logo {
@@ -207,4 +207,25 @@ footer {
     footer {
         font-size: 0.8rem;
     }
+}
+html, body {
+    height: 100%;  /* Asegura que ocupen toda la altura */
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;  /* Empuja el footer hacia abajo */
+}
+
+footer {
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
 }
