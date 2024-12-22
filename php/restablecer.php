@@ -30,7 +30,7 @@
             <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
             
             <!-- Link hacia el archivo de estilos css -->
-            <link rel="stylesheet" href="../css/restablecer.css">
+             <link rel="stylesheet" href="../css/estilo2.css">
 
             <!-- Link favicon -->
             <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
