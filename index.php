@@ -160,6 +160,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) 
                    // Establecer nueva sesión con los datos del usuario
                    $_SESSION['DNI_Cliente'] = $row['DNI_Cliente'];
                    $_SESSION['Tipo'] = $row['Tipo'];
+                   $_SESSION['ID_Cliente'] = $row['ID_Cliente'];
+
        
                    // Redirigir según el tipo de usuario
                    if ($_SESSION['Tipo'] === 'admin') {
