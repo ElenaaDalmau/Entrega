@@ -17,7 +17,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
-     
     <head>
         
         <meta charset="utf-8">
@@ -40,139 +39,135 @@
 
     </head>
     
-    <body >
+    <body>
 
-<!--CABECERA-->
-<div id="header">
-        <div class="logo">
-            <img src="img/logo.png" alt="COACHING SL">
+        <!--CABECERA-->
+        <div id="header">
+            <div class="logo">
+                <img src="img/logo.png" alt="COACHING SL">
+            </div>
+            <nav>
+                <ul>
+                    <?php
+                    if ($_SESSION['Tipo'] == "cliente") { // Si es Admin, mostrar opciones adicionales
+                        echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                        echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                        echo "<li><a href='Contacto.php'><i class='fa fa-phone-square'></i> <span data-translate='contacto'>Puesta en contacto</span></a></li>";
+                        echo "<li><a href='ListadoEspe.php'><i class='fa fa-address-book'></i> <span data-translate='especialistas'>Especialistas</span></a></li>";
+                        echo "<li><a href='Calendario.php'><i class='fa fa-calendar'></i> <span data-translate='calendario'>Calendario</span></a></li>";
+                        echo '<br>';
+                    }
+
+                    if ($_SESSION['Tipo'] == "admin") { // Si es Admin, mostrar opciones adicionales
+                        echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                        echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                        echo "<li><a href='FuncionesAdmin.php'><i class='fa fa-address-book'></i><span data-translate='ADMIN'>Admin</span></a></li>";
+                        echo '<br>';
+                    }
+                    if ($_SESSION['Tipo'] == "espe") { // Si es Especialista, mostrar opciones adicionales
+                        echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                        echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                        echo "<li><a href='FuncionesEspe.php'><i class='fa fa-address-book'></i><span data-translate='espe'>espe</span></a></li>";
+                        echo '<br>';
+                    }
+                    ?>
+                    <li>               
+                        <div class="lenguage-selector">
+                            <label for="lenguage"></label>
+                            <select name="lenguage" id="lenguage">
+                                <option value="es" data-translate="espanol">Español</option>
+                                <option value="ca" data-translate="catalan">Catalan</option>
+                                <option value="en" data-translate="ingles">Inglés</option>
+                                <option value="fr" data-translate="frances">Francés</option>
+                                <option value="it" data-translate="italiano">Italiano</option>
+                                <option value="eu" data-translate="euskera">Euskera</option>
+                                <option value="gl" data-translate="gallego">Gallego</option>
+                                <option value="su" data-translate="sueco">Sueco</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-        <ul>
-                <?php
-                if ($_SESSION['Tipo'] == "cliente") { // Si es Admin, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='Contacto.php'><i class='fa fa-phone-square'></i> <span data-translate='contacto'>Puesta en contacto</span></a></li>";
-                    echo "<li><a href='ListadoEspe.php'><i class='fa fa-address-book'></i> <span data-translate='especialistas'>Especialistas</span></a></li>";
-                    echo "<li><a href='Calendario.php'><i class='fa fa-calendar'></i> <span data-translate='calendario'>Calendario</span></a></li>";
-                    echo '<br>';
-                }
 
-                if ($_SESSION['Tipo'] == "admin") { // Si es Admin, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='FuncionesAdmin.php'><i class='fa fa-address-book'></i><span data-translate='ADMIN'>Admin</span></a></li>";
-                    echo '<br>';
-                }
-                if ($_SESSION['Tipo'] == "espe") { // Si es Especialista, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='FuncionesEspe.php'><i class='fa fa-address-book'></i><span data-translate='espe'>espe</span></a></li>";
-                    echo '<br>';
-                }
-                ?>
-                <li>               
-                    <div class="lenguage-selector">
-                        <label for="lenguage"></label>
-                        <select name="lenguage" id="lenguage">
-                            <option value="es" data-translate="espanol">Español</option>
-                            <option value="ca" data-translate="catalan">Catalan</option>
-                            <option value="en" data-translate="ingles">Inglés</option>
-                            <option value="fr" data-translate="frances">Francés</option>
-                            <option value="it" data-translate="italiano">Italiano</option>
-                            <option value="eu" data-translate="euskera">Euskera</option>
-                            <option value="gl" data-translate="gallego">Gallego</option>
-                            <option value="su" data-translate="sueco">Sueco</option>
-                        </select>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-
-<!-- CODIGO -->
+        <!-- CODIGO -->
 
         <?php
 
-if (isset($_REQUEST['Modificar'])) {
-    // Aseguramos que los valores del formulario estén en las variables
-    
-    $DNI_Cliente = mysqli_real_escape_string($conn, $_POST['DNI_Cliente']);
-    $Nombre_Cliente = mysqli_real_escape_string($conn, $_POST['Nombre_Cliente']);
-    $Apellido_Cliente = mysqli_real_escape_string($conn, $_POST['Apellido_Cliente']);
-    $FechaNacimiento_Cliente = mysqli_real_escape_string($conn, $_POST['FechaNacimiento_Cliente']);
-    $NumTelefono_Cliente = mysqli_real_escape_string($conn, $_POST['NumTelefono_Cliente']);
-    $Correo_Cliente = mysqli_real_escape_string($conn, $_POST['Correo_Cliente']);
-    $TipoVia_Cliente = mysqli_real_escape_string($conn, $_POST['TipoVia_Cliente']);
-    $NombreVia_Cliente= mysqli_real_escape_string($conn, $_POST['NombreVia_Cliente']);
-    $NumeroVia_Cliente = mysqli_real_escape_string($conn, $_POST['NumeroVia_Cliente']);
-    $Contrasena_Cliente = mysqli_real_escape_string($conn, $_POST['Contrasena_Cliente']);
-   
-  
-
-
-    // Preparamos la consulta SQL con valores vinculados
-    $sql = "UPDATE CLIENTES 
-            SET DNI_Cliente=?, 
-                Nombre_Cliente=?, 
-                Apellido_Cliente=?, 
-                FechaNacimiento_Cliente=?, 
-                NumTelefono_Cliente=?, 
-                Correo_Cliente=?, 
-                TipoVia_Cliente=?, 
-                NombreVia_Cliente=?, 
-                NumeroVia_Cliente=?,
-                Contrasena_Cliente=?
-            WHERE DNI_Cliente=?";
-
-    // Usamos mysqli_prepare y mysqli_stmt_bind_param para vincular las variables
-    if ($stmt = mysqli_prepare($conn, $sql)) {
-        // Vinculamos las variables a la consulta preparada
-        mysqli_stmt_bind_param($stmt, "sssssssssss", 
-            $DNI_Cliente, 
-            $Nombre_Cliente, 
-            $Apellido_Cliente, 
-            $FechaNacimiento_Cliente, 
-            $NumTelefono_Cliente, 
-            $Correo_Cliente, 
-            $TipoVia_Cliente, 
-            $NombreVia_Cliente, 
-            $NumeroVia_Cliente,
-            $Contrasena_Cliente, 
-            $DNI_Cliente); // El último $DNI_Cliente es para la condición WHERE
-
-        // Ejecutamos la consulta
-        if (mysqli_stmt_execute($stmt)) {
-            header("Location:ConfModCli.php");
-        } else {
-            // Muestra el error de ejecución
-            echo "Error al ejecutar la consulta: " . mysqli_stmt_error($stmt);
-        }
-
-        // Cerramos la declaración preparada
-        mysqli_stmt_close($stmt);
-    } else {
-        // Si no se puede preparar la consulta
-        echo "Error al preparar la consulta: " . mysqli_error($conn);
-    }
-
-}
-            if (isset($_REQUEST['DNI'])){
+            if (isset($_REQUEST['Modificar'])) {
+                // Aseguramos que los valores del formulario estén en las variables
                 
-                $DNI_Cliente=$_REQUEST['DNI'];
+                $DNI_Cliente = mysqli_real_escape_string($conn, $_POST['DNI_Cliente']);
+                $Nombre_Cliente = mysqli_real_escape_string($conn, $_POST['Nombre_Cliente']);
+                $Apellido_Cliente = mysqli_real_escape_string($conn, $_POST['Apellido_Cliente']);
+                $FechaNacimiento_Cliente = mysqli_real_escape_string($conn, $_POST['FechaNacimiento_Cliente']);
+                $NumTelefono_Cliente = mysqli_real_escape_string($conn, $_POST['NumTelefono_Cliente']);
+                $Correo_Cliente = mysqli_real_escape_string($conn, $_POST['Correo_Cliente']);
+                $TipoVia_Cliente = mysqli_real_escape_string($conn, $_POST['TipoVia_Cliente']);
+                $NombreVia_Cliente= mysqli_real_escape_string($conn, $_POST['NombreVia_Cliente']);
+                $NumeroVia_Cliente = mysqli_real_escape_string($conn, $_POST['NumeroVia_Cliente']);
+                $Contrasena_Cliente = mysqli_real_escape_string($conn, $_POST['Contrasena_Cliente']);
 
-                $sql="SELECT * FROM Clientes WHERE DNI_Cliente= '$DNI_Cliente';";
-        
-                $resultado=mysqli_query($conn,$sql);
+                // Preparamos la consulta SQL con valores vinculados
+                $sql = "UPDATE CLIENTES 
+                        SET DNI_Cliente=?, 
+                            Nombre_Cliente=?, 
+                            Apellido_Cliente=?, 
+                            FechaNacimiento_Cliente=?, 
+                            NumTelefono_Cliente=?, 
+                            Correo_Cliente=?, 
+                            TipoVia_Cliente=?, 
+                            NombreVia_Cliente=?, 
+                            NumeroVia_Cliente=?,
+                            Contrasena_Cliente=?
+                        WHERE DNI_Cliente=?";
 
-                //! Que estas 
-                if(mysqli_num_rows($resultado)>0)
-                {
-                    $row = mysqli_fetch_assoc($resultado);            
-                ?>
-                    <div id="contenedor_ME">
+                // Usamos mysqli_prepare y mysqli_stmt_bind_param para vincular las variables
+                if ($stmt = mysqli_prepare($conn, $sql)) {
+                    // Vinculamos las variables a la consulta preparada
+                    mysqli_stmt_bind_param($stmt, "sssssssssss", 
+                        $DNI_Cliente, 
+                        $Nombre_Cliente, 
+                        $Apellido_Cliente, 
+                        $FechaNacimiento_Cliente, 
+                        $NumTelefono_Cliente, 
+                        $Correo_Cliente, 
+                        $TipoVia_Cliente, 
+                        $NombreVia_Cliente, 
+                        $NumeroVia_Cliente,
+                        $Contrasena_Cliente, 
+                        $DNI_Cliente); // El último $DNI_Cliente es para la condición WHERE
+
+                    // Ejecutamos la consulta
+                    if (mysqli_stmt_execute($stmt)) {
+                        header("Location:ConfModCli.php");
+                    } else {
+                        // Muestra el error de ejecución
+                        echo "Error al ejecutar la consulta: " . mysqli_stmt_error($stmt);
+                    }
+
+                    // Cerramos la declaración preparada
+                    mysqli_stmt_close($stmt);
+                } else {
+                    // Si no se puede preparar la consulta
+                    echo "Error al preparar la consulta: " . mysqli_error($conn);
+                }
+
+            }
+                if (isset($_REQUEST['DNI'])){
+                    
+                    $DNI_Cliente=$_REQUEST['DNI'];
+
+                    $sql="SELECT * FROM Clientes WHERE DNI_Cliente= '$DNI_Cliente';";
+            
+                    $resultado=mysqli_query($conn,$sql);
+
+                    //! Que estas 
+                    if(mysqli_num_rows($resultado)>0)
+                    {
+                        $row = mysqli_fetch_assoc($resultado);            
+                    ?>
+        <div id="contenedor_ME">
             <div id="central_ME">
                 <div id="modiel">
                     <div class="subtitulo_me">Modificar Cliente</div>
@@ -220,23 +215,21 @@ if (isset($_REQUEST['Modificar'])) {
             </div>    
         </div>
 
-                <?php
+        <?php
                     }else{
                         echo "Cliente no encontrado: " . $sql . "<br>" .mysqli_error($conn);
             }
         }
 
-    
-    ?>
-        
-
-<!-- PIE DE PAGINA -->
+        ?>
+                
+        <!-- PIE DE PAGINA -->
         <footer>
             Todos los derechos reservados | Coaching SL Copyright © 2024
         </footer>
 
- <!-- Link a JavaScript -->
-<script src="../JS/traducciones.js"></script>
+        <!-- Link a JavaScript -->
+        <script src="../JS/traducciones.js"></script>
     </body>
 </html>
 
