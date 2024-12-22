@@ -259,15 +259,17 @@ footer p {
     padding-bottom: 16px;
 }
 
+.login-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+}
 
-
-
-
-
-
-
-
-
+.enlaceess{
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+}
 
 
 
