@@ -28,7 +28,7 @@
         $DNI_Cliente = $_SESSION['DNI_Cliente'];
 
         // Consulta SQL para obtener los datos del cliente
-        $sql_cliente = "SELECT Nombre_Cliente, Apellido_Cliente FROM CLIENTES WHERE DNI_Cliente = '$DNI_Cliente'";
+        $sql_cliente = "SELECT ID_Cliente, Nombre_Cliente, Apellido_Cliente FROM CLIENTES WHERE DNI_Cliente = '$DNI_Cliente'";
         $resultado_cliente = mysqli_query($conn, $sql_cliente);
 
         // Validar el resultado de la consulta
@@ -38,6 +38,8 @@
 
         // Obtener los datos del cliente
         $cliente = mysqli_fetch_assoc($resultado_cliente);
+        $_SESSION['ID_Cliente'] = $cliente['ID_Cliente'];
+
     ?>
 
 <!DOCTYPE html>
