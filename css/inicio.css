@@ -13,8 +13,34 @@ body{
     line-height: 1.5;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    text-transform: uppercase;
 }
+
+.Contenedor_Inicio {
+    max-width: 60em;
+    min-width: 45em;
+    margin: 0 auto;
+    padding: 0 2em;
+  }
+
+  .Contenedor_Inicio .frase_inicio{
+    text-align: center;            
+}
+
+        
+.Inicio_fondoo {
+    position: relative;
+    background: url("../img/iniciofoto.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 10em 0 8em;
+    z-index: 2;
+  }
+  
+  .Inicio_fondoo h1 {
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+  }
 
 /*CABECERA - header*/
         #header {
@@ -116,6 +142,127 @@ footer {
 footer p {
     margin: 10px 0;
 }
+
+
+/*CSS DE GESTION DE CLIENTES*/
+/* General Body Styling */
+.CAJAgrandeCLI{
+    height: 727px;
+}
+.gestioncliente { 
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0e9e6; /* Fondo claro */
+    color: #5c5346;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Contenedor Principal */
+#listado-clientes { 
+    flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+/* Título Principal */
+.titulos {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #5c5346;
+    margin: 40px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.titulos::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #5c5346; /* Línea roja debajo del título */
+    margin: 10px auto;
+}
+
+/* Contenedor de Tarjetas */
+#fondo_listado {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Espaciado entre tarjetas */
+    justify-content: center;
+}
+
+/* Tarjetas */
+.cliente-contenedor {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 300px; /* Ancho fijo de las tarjetas */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cliente-contenedor:hover {
+    transform: translateY(-10px); /* Efecto flotante */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cliente-contenedor h1 {
+    font-size: 1.2rem;
+    color: #2c211f; /* Título en rojo */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.cliente-contenedor p {
+    font-size: 1rem;
+    color: #7b6f62; /* Texto gris */
+    margin-bottom: 10px;
+}
+
+/* Botones */
+.cliente-contenedor a {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+/* Botón Modificar */
+.cliente-contenedor .acciones {
+    background-color: #5a9bd5; /* Azul suave */
+    color: #ffffff; /* Texto blanco */
+}
+
+.cliente-contenedor .acciones:hover {
+    background-color: #37419e; /* Hover azul más oscuro */
+    color: #ffffff;
+}
+
+
+.cliente-contenedor .acciones a{
+    color: #ffffff; /* Texto blanco */
+}
+
+.form-container{
+    padding-bottom: 16px;
+}
+
+
+
+
+
 
 
 
