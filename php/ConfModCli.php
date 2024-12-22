@@ -35,7 +35,7 @@
     </head>
 
     <body class="confirmaciones_fondo">
-<!-- CODIGO CONFIRMACION -->
+        <!-- CODIGO CONFIRMACION -->
         <div class="confirmacion_cajagrande">
             <div class="central">
                 <div class="conf_fafa">

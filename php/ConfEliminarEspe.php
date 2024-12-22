@@ -41,9 +41,8 @@
     </head>
    
     <body class="confirmaciones_fondo"> 
-
-    <!-- CONFIRMACION ELIMINAR -->
-    <div class="confirmacion_cajagrande">
+        <!-- CONFIRMACION ELIMINAR -->
+        <div class="confirmacion_cajagrande">
             <div class="central">
                 <div class="conf_fafa">
                     <i class="fa-solid fa-trash-can"></i>
@@ -53,12 +52,12 @@
                     <?php
                         echo "<p>Se ha eliminado correctamente el especialista seleccionado.</p>"
                     ?>
-                    </div>
-                            
-                    <div class="pie-form">
-                        <a class="Confirmacion_boton" href="GestionEspe.php">Continuar</a>
-                    </div>   
                 </div>
-            </div> 
+                        
+                <div class="pie-form">
+                    <a class="Confirmacion_boton" href="GestionEspe.php">Continuar</a>
+                </div>   
+            </div>
+        </div> 
     </body>
 </html>

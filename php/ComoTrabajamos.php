@@ -17,7 +17,6 @@
 ?>
 
 <!DOCTYPE html>
-
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -35,7 +34,7 @@
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />        
         
-<!-- ESTILO del mapa-->
+        <!-- ESTILO del mapa-->
         <style>
             #mapa {
                 width: 100%;
@@ -43,64 +42,62 @@
             }
         </style>
 
-   </head>
+    </head>
 
 
     <body>
+        <!--CABECERA-->
+        <div id="header">
+            <div class="logo">
+                <img src="../img/logo.png" alt="COACHING SL">
+            </div>
+            <nav>
+                <ul>
+                    <?php
+                    if ($_SESSION['Tipo'] == "cliente") { // Si es Admin, mostrar opciones adicionales
+                        echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                        echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                        echo "<li><a href='Contacto.php'><i class='fa fa-phone-square'></i> <span data-translate='contacto'>Puesta en contacto</span></a></li>";
+                        echo "<li><a href='ListadoEspe.php'><i class='fa fa-address-book'></i> <span data-translate='especialistas'>Especialistas</span></a></li>";
+                        echo "<li><a href='Calendario.php'><i class='fa fa-calendar'></i> <span data-translate='calendario'>Calendario</span></a></li>";
+                        echo '<br>';
+                    }
 
-
-<!--CABECERA-->
-<div id="header">
-        <div class="logo">
-            <img src="../img/logo.png" alt="COACHING SL">
+                    if ($_SESSION['Tipo'] == "admin") { // Si es Admin, mostrar opciones adicionales
+                        echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                        echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                        echo "<li><a href='FuncionesAdmin.php'><i class='fa fa-address-book'></i><span data-translate='ADMIN'>Admin</span></a></li>";
+                        echo '<br>';
+                    }
+                    if ($_SESSION['Tipo'] == "espe") { // Si es Especialista, mostrar opciones adicionales
+                        echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                        echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                        echo "<li><a href='FuncionesEspe.php'><i class='fa fa-address-book'></i><span data-translate='espe'>espe</span></a></li>";
+                        echo '<br>';
+                    }
+                    ?>
+                    <li>               
+                        <div class="lenguage-selector">
+                            <label for="lenguage"></label>
+                            <select name="lenguage" id="lenguage">
+                                <option value="es" data-translate="espanol">Español</option>
+                                <option value="ca" data-translate="catalan">Catalan</option>
+                                <option value="en" data-translate="ingles">Inglés</option>
+                                <option value="fr" data-translate="frances">Francés</option>
+                                <option value="it" data-translate="italiano">Italiano</option>
+                                <option value="eu" data-translate="euskera">Euskera</option>
+                                <option value="gl" data-translate="gallego">Gallego</option>
+                                <option value="su" data-translate="sueco">Sueco</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <?php
-                if ($_SESSION['Tipo'] == "cliente") { // Si es Admin, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='Contacto.php'><i class='fa fa-phone-square'></i> <span data-translate='contacto'>Puesta en contacto</span></a></li>";
-                    echo "<li><a href='ListadoEspe.php'><i class='fa fa-address-book'></i> <span data-translate='especialistas'>Especialistas</span></a></li>";
-                    echo "<li><a href='Calendario.php'><i class='fa fa-calendar'></i> <span data-translate='calendario'>Calendario</span></a></li>";
-                    echo '<br>';
-                }
 
-                if ($_SESSION['Tipo'] == "admin") { // Si es Admin, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='FuncionesAdmin.php'><i class='fa fa-address-book'></i><span data-translate='ADMIN'>Admin</span></a></li>";
-                    echo '<br>';
-                }
-                if ($_SESSION['Tipo'] == "espe") { // Si es Especialista, mostrar opciones adicionales
-                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
-                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
-                    echo "<li><a href='FuncionesEspe.php'><i class='fa fa-address-book'></i><span data-translate='espe'>espe</span></a></li>";
-                    echo '<br>';
-                }
-                ?>
-                <li>               
-                    <div class="lenguage-selector">
-                        <label for="lenguage"></label>
-                        <select name="lenguage" id="lenguage">
-                            <option value="es" data-translate="espanol">Español</option>
-                            <option value="ca" data-translate="catalan">Catalan</option>
-                            <option value="en" data-translate="ingles">Inglés</option>
-                            <option value="fr" data-translate="frances">Francés</option>
-                            <option value="it" data-translate="italiano">Italiano</option>
-                            <option value="eu" data-translate="euskera">Euskera</option>
-                            <option value="gl" data-translate="gallego">Gallego</option>
-                            <option value="su" data-translate="sueco">Sueco</option>
-                        </select>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-<!-- SOBRE EL TRABAJO -->
-
-<section id="SobreNosotras">
+    
+    <!-- SOBRE EL TRABAJO -->
+    <section id="SobreNosotras">
         <div class="globalnosotras">
             <div class="subapartados">
                 <hr class="highlight"/> <!-- SEPARADOR-->
@@ -177,161 +174,161 @@
             </div>
         </div>
     </section>
-    <hr class="highlight"/> <!-- SEPARADOR-->
+        <hr class="highlight"/> <!-- SEPARADOR-->
 
 
-<!-- ESTILOS DE COACHING-->
+    <!-- ESTILOS DE COACHING-->
 
-<section id="services" class="apartados" id="apartados">
-        <div class="info_coaching">
-            <div class="Centrar_info_coaching">
-                <div class="col-lg-12 text-center">
-                    <h2 class="ApartadoCoachingTit">Servicios que ofrecemos</h2>
-                    <h3 class="textoinicioCoaching" >A continuación, encontrarás un lisatdo de los diferentes
-                            servicios de coaching que podrás encontrar en nuestra empresa.</h3>
-                </div>
-            </div>
-
-            <div class="coaching_columnas">
-                <div class="cajatiposcoaching">
-                    <div class="">
-                        <i class="fa-solid fa-users lock-icon_2"></i>
-                    </div>
-                    <h4 class="coaching">Coaching Empresarial</h4>
-                    <p class="expl_tiposcoaching">Este estilo se centra en mejorar el rendimiento de los equipos y líderes en el ámbito laboral,
-                        fomentando habilidades como la toma de decisiones, liderazgo y resolución de conflictos.
-                    </p>
-                </div>
-
-                <div class="cajatiposcoaching">
-                    <div class="">
-                        <i class="fa-regular fa-face-smile lock-icon_2"></i>
-                    </div>
-                    <h4 class="coaching">Coaching con Inteligencia Emocional</h4>
-                    <p class="expl_tiposcoaching">Este estilo potencia la capacidad de reconocer, gestionar y utilizar emociones de
-                        forma efectiva para lograr mejores resultados en las relaciones personales y profesionales.
-                    </p>
-                </div>
-
-                <div class="cajatiposcoaching">
-                    <div class="">
-                        <i class="fa-solid fa-arrow-trend-up lock-icon_2"></i>
-                    </div>
-                    <h4 class="coaching">Coaching Ontológico</h4>
-                    <p class="expl_tiposcoaching">Este estilo está enfocado en el ser y el lenguaje, busca transformar la manera en que
-                        las personas interpretan la realidad para mejorar sus comportamientos y resultados.
-                    </p>
-                </div>
-
-                <div class="cajatiposcoaching">
-                    <div class="">
-                        <i class="fa-solid fa-brain lock-icon_2"></i>
-                    </div>
-                    <h4 class="coaching">Coaching PNL (Programación Neurolingüística) </h4>
-                    <p class="expl_tiposcoaching">Este estilo trabaja con patrones de pensamiento, lenguaje y comportamiento para
-                        reprogramar la mente y facilitar cambios positivos en diferentes áreas de la vida.
-                    </p>
-                </div>
-
-                <div class="cajatiposcoaching">
-                    <div class="">
-                        <i class="fa-solid fa-star lock-icon_2"></i>
-                    </div>
-                    <h4 class="coaching">Coaching Personal</h4>
-                    <p class="expl_tiposcoaching">Este estilo ayuda a las personas a alcanzar objetivos personales, superar bloqueos
-                        emocionales y mejorar áreas de su vida como relaciones, confianza y bienestar.
-                    </p>
-                </div>
-
-                <div class="cajatiposcoaching">
-                    <div class="">
-                        <i class="fa-solid fa-person-running lock-icon_2"></i>
-                    </div>
-                    <h4 class="coaching">Coaching Deportivo</h4>
-                    <p class="expl_tiposcoaching"> Este estilo está diseñado para atletas y equipos, mejora el rendimiento físico
-                        y mental, ayudando a superar límites, manejar la presión y alcanzar metas deportivas.
-                    </p>
-                </div>
-
-                <div class="cajatiposcoaching">
-                    <div class="">
-                        <i class="fa-solid fa-thumbs-up lock-icon_2"></i>
-                    </div>
-                    <h4 class="coaching">Coaching Cognitivo</h4>
-                    <p class="expl_tiposcoaching">Este estilo utiliza técnicas de la psicología cognitiva para identificar
-                        y reestructurar pensamientos limitantes, promoviendo creencias más positivas y funcionales.
-                    </p>
-                </div>
-
-                <div class="cajatiposcoaching">
-                    <div class="">
-                        <i class="fa-solid fa-person-praying lock-icon_2"></i>
-                    </div>
-                    <h4 class="coaching">Coaching Coercitivo</h4>
-                    <p class="expl_tiposcoaching">Este estilo utiliza dinámicas intensas y directas para desafiar creencias
-                        y hábitos, promoviendo cambios rápidos, aunque puede ser más controvertido por sus métodos.
-                    </p>
-                </div>
-
-            </div> <!-- coaching_columnas -->
-        </div> <!-- info_coaching -->
-    </section>
-
-    <hr class="highlight"/> <!-- SEPARADOR-->
-
-<!-- DIRECCIÓN -->
-        <section class="apartados" id="apartados">
-                <div class="info_ubi_grande">
-                    <div class="info_ubi">
-                        <h3 class="titulo_apartados">Ubicación</h3>
-                        <p class="calle"> Carrer de Llança, 51<br /> L'Eixample, 08015, Barcelona</p>
-                        <p class="calle"> Calle de Alcalá, 472<br /> San Blas-Canillejas, 28027 Madrid</p>
-                        <p class="RRSS">INSTAGRAM</p>
-                        <p class="correo">contacto: coachingslsants@gmail.com </p>
-                    </div>
-                    <div class="horarios">
-                        <h3 class="titulo_apartados">Horario</h3>
-                        <p class="entre-semana"> Lunes a Viernes <br/> 8:00 - 13:00 <br/> 15:00 - 21:00 </p>
-                        <p class="fin-semana"> Sabados y Domingos <br/> Cerrado </p>
+    <section id="services" class="apartados" id="apartados">
+            <div class="info_coaching">
+                <div class="Centrar_info_coaching">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="ApartadoCoachingTit">Servicios que ofrecemos</h2>
+                        <h3 class="textoinicioCoaching" >A continuación, encontrarás un lisatdo de los diferentes
+                                servicios de coaching que podrás encontrar en nuestra empresa.</h3>
                     </div>
                 </div>
-            </section>
 
-    <hr class="highlight"/> <!-- SEPARADOR-->
+                <div class="coaching_columnas">
+                    <div class="cajatiposcoaching">
+                        <div class="">
+                            <i class="fa-solid fa-users lock-icon_2"></i>
+                        </div>
+                        <h4 class="coaching">Coaching Empresarial</h4>
+                        <p class="expl_tiposcoaching">Este estilo se centra en mejorar el rendimiento de los equipos y líderes en el ámbito laboral,
+                            fomentando habilidades como la toma de decisiones, liderazgo y resolución de conflictos.
+                        </p>
+                    </div>
+
+                    <div class="cajatiposcoaching">
+                        <div class="">
+                            <i class="fa-regular fa-face-smile lock-icon_2"></i>
+                        </div>
+                        <h4 class="coaching">Coaching con Inteligencia Emocional</h4>
+                        <p class="expl_tiposcoaching">Este estilo potencia la capacidad de reconocer, gestionar y utilizar emociones de
+                            forma efectiva para lograr mejores resultados en las relaciones personales y profesionales.
+                        </p>
+                    </div>
+
+                    <div class="cajatiposcoaching">
+                        <div class="">
+                            <i class="fa-solid fa-arrow-trend-up lock-icon_2"></i>
+                        </div>
+                        <h4 class="coaching">Coaching Ontológico</h4>
+                        <p class="expl_tiposcoaching">Este estilo está enfocado en el ser y el lenguaje, busca transformar la manera en que
+                            las personas interpretan la realidad para mejorar sus comportamientos y resultados.
+                        </p>
+                    </div>
+
+                    <div class="cajatiposcoaching">
+                        <div class="">
+                            <i class="fa-solid fa-brain lock-icon_2"></i>
+                        </div>
+                        <h4 class="coaching">Coaching PNL (Programación Neurolingüística) </h4>
+                        <p class="expl_tiposcoaching">Este estilo trabaja con patrones de pensamiento, lenguaje y comportamiento para
+                            reprogramar la mente y facilitar cambios positivos en diferentes áreas de la vida.
+                        </p>
+                    </div>
+
+                    <div class="cajatiposcoaching">
+                        <div class="">
+                            <i class="fa-solid fa-star lock-icon_2"></i>
+                        </div>
+                        <h4 class="coaching">Coaching Personal</h4>
+                        <p class="expl_tiposcoaching">Este estilo ayuda a las personas a alcanzar objetivos personales, superar bloqueos
+                            emocionales y mejorar áreas de su vida como relaciones, confianza y bienestar.
+                        </p>
+                    </div>
+
+                    <div class="cajatiposcoaching">
+                        <div class="">
+                            <i class="fa-solid fa-person-running lock-icon_2"></i>
+                        </div>
+                        <h4 class="coaching">Coaching Deportivo</h4>
+                        <p class="expl_tiposcoaching"> Este estilo está diseñado para atletas y equipos, mejora el rendimiento físico
+                            y mental, ayudando a superar límites, manejar la presión y alcanzar metas deportivas.
+                        </p>
+                    </div>
+
+                    <div class="cajatiposcoaching">
+                        <div class="">
+                            <i class="fa-solid fa-thumbs-up lock-icon_2"></i>
+                        </div>
+                        <h4 class="coaching">Coaching Cognitivo</h4>
+                        <p class="expl_tiposcoaching">Este estilo utiliza técnicas de la psicología cognitiva para identificar
+                            y reestructurar pensamientos limitantes, promoviendo creencias más positivas y funcionales.
+                        </p>
+                    </div>
+
+                    <div class="cajatiposcoaching">
+                        <div class="">
+                            <i class="fa-solid fa-person-praying lock-icon_2"></i>
+                        </div>
+                        <h4 class="coaching">Coaching Coercitivo</h4>
+                        <p class="expl_tiposcoaching">Este estilo utiliza dinámicas intensas y directas para desafiar creencias
+                            y hábitos, promoviendo cambios rápidos, aunque puede ser más controvertido por sus métodos.
+                        </p>
+                    </div>
+
+                </div> <!-- coaching_columnas -->
+            </div> <!-- info_coaching -->
+        </section>
+
+        <hr class="highlight"/> <!-- SEPARADOR-->
+
+    <!-- DIRECCIÓN -->
+            <section class="apartados" id="apartados">
+                    <div class="info_ubi_grande">
+                        <div class="info_ubi">
+                            <h3 class="titulo_apartados">Ubicación</h3>
+                            <p class="calle"> Carrer de Llança, 51<br /> L'Eixample, 08015, Barcelona</p>
+                            <p class="calle"> Calle de Alcalá, 472<br /> San Blas-Canillejas, 28027 Madrid</p>
+                            <p class="RRSS">INSTAGRAM</p>
+                            <p class="correo">contacto: coachingslsants@gmail.com </p>
+                        </div>
+                        <div class="horarios">
+                            <h3 class="titulo_apartados">Horario</h3>
+                            <p class="entre-semana"> Lunes a Viernes <br/> 8:00 - 13:00 <br/> 15:00 - 21:00 </p>
+                            <p class="fin-semana"> Sabados y Domingos <br/> Cerrado </p>
+                        </div>
+                    </div>
+                </section>
+
+        <hr class="highlight"/> <!-- SEPARADOR-->
 
 
 
-<!-- MAPA -->
-    <h3 class="titulo_mapa">Centro Coaching S.L en Barcelona</h3>
+        <!-- MAPA -->
+        <h3 class="titulo_mapa">Centro Coaching S.L en Barcelona</h3>
 
-    <div id="mapa"></div>
+        <div id="mapa"></div>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        // Crear el mapa centrado en una ubicación (ejemplo: Madrid)
-        var mapa = L.map('mapa').setView([41.38052522449038, 2.144449785579248], 13);
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            // Crear el mapa centrado en una ubicación (ejemplo: Madrid)
+            var mapa = L.map('mapa').setView([41.38052522449038, 2.144449785579248], 13);
 
-        // Añadir capa de mapa con OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(mapa);
+            // Añadir capa de mapa con OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(mapa);
 
-        // Añadir marcador en la ubicación
-        L.marker([41.38052522449038, 2.144449785579248]).addTo(mapa)
-            .bindPopup('Coaching S.L, Barcelona')
-            .openPopup();
-    </script>
+            // Añadir marcador en la ubicación
+            L.marker([41.38052522449038, 2.144449785579248]).addTo(mapa)
+                .bindPopup('Coaching S.L, Barcelona')
+                .openPopup();
+        </script>
 
-    <hr class="highlight"/> <!-- SEPARADOR-->
+        <hr class="highlight"/> <!-- SEPARADOR-->
 
 
-<!-- PIE DE PAGINA -->
+        <!-- PIE DE PAGINA -->
         <footer>
             Todos los derechos reservados | Coaching SL Copyright © 2024
         </footer>
-    
-    <!-- Link a JavaScript -->
-    <script src="JS/traducciones.js"></script>
+        
+        <!-- Link a JavaScript -->
+        <script src="JS/traducciones.js"></script>
 
     </body>
 </html>
