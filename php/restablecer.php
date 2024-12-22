@@ -40,40 +40,42 @@
     
     </head>
 
-    <body class="restablecer_fondo">        
+    <body class="confirmaciones_fondo">        
 
         <!-- Codigo inicio  -->
-        <div class="res_global">
-            <div class="icono_restablecer">
-                <i class="fa fa-check-circle"></i>
-            </div>
-            <div class="titulo">
-            <?php
-                if (isset($_REQUEST['DNI_Cliente'])) {
-                    $DNI = mysqli_real_escape_string($conn, $_REQUEST['DNI_Cliente']);
+        <div class="confirmacion_cajagrande">
+            <div class="central">
+                <div class="conf_fafa">
+                    <i class="fa fa-check-circle"></i>
+                </div>
+                <div class="titulo">
+                    <?php
+                    if (isset($_REQUEST['DNI_Cliente'])) {
+                        $DNI = mysqli_real_escape_string($conn, $_REQUEST['DNI_Cliente']);
 
-                    // Consultar la base de datos
-                    $sql = "SELECT Nombre_Cliente, Apellido_Cliente FROM CLIENTES WHERE DNI_Cliente='$DNI';";
-                    $resultado = mysqli_query($conn, $sql);
+                        // Consultar la base de datos
+                        $sql = "SELECT Nombre_Cliente, Apellido_Cliente FROM CLIENTES WHERE DNI_Cliente='$DNI';";
+                        $resultado = mysqli_query($conn, $sql);
 
-                    if ($resultado && mysqli_num_rows($resultado) > 0) {
-                        // Obtener los datos del cliente
-                        $row = mysqli_fetch_assoc($resultado);
-                        $Nombre_Cliente = $row['Nombre_Cliente'];
-                        $Apellido_Cliente = $row['Apellido_Cliente'];
-                        
-                        //Mensaje de confirmación
-                        echo "<h1 class='restablecer_h1'>¡Se ha modificado correctamente la contraseña!</h1>";
+                        if ($resultado && mysqli_num_rows($resultado) > 0) {
+                            // Obtener los datos del cliente
+                            $row = mysqli_fetch_assoc($resultado);
+                            $Nombre_Cliente = $row['Nombre_Cliente'];
+                            $Apellido_Cliente = $row['Apellido_Cliente'];
+                            
+                            //Mensaje de confirmación
+                            echo "<h1 class='conf_titulo'>¡Se ha modificado correctamente la contraseña!</h1>";
 
-                        echo "<p class='restablecer_mens'>$Nombre_Cliente $Apellido_Cliente se ha modificado correctamente tu contraseña.</p>";
+                            echo "<p class='titulo'>$Nombre_Cliente $Apellido_Cliente se ha modificado correctamente tu contraseña.</p>";
+                        }
                     }
-                }
-            ?>
-            </div>
-                <div class="pie-form">
-                    <a class="restablecer_enlace" href="../index.php">Continuar</a>
-                </div>   
-            </div>
+                    ?>
+                </div>
+                    <div class="pie-form">
+                        <a class="Confirmacion_boton" href="../index.php">Continuar</a>
+                    </div>   
+                </div>
+            </div>        
         </div>        
         <!-- Link a JavaScript -->
         <script src="../JS/traducciones.js"></script>
