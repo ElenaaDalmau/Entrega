@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservar cita</title>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/reservar.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -197,38 +197,37 @@ if (isset($_POST['DNI_Especialista']))
 </footer>
 <script type="text/javascript">
     document.addEventListener('change', function() {
-        // Obtener los días válidos desde el campo oculto
         var condicion = JSON.parse(document.getElementById('DiaValido').value);
       
-        // Llamar a la función de comprobación de la fecha
+       
         ComprobarFecha(condicion);
     });
 
     function ComprobarFecha(condicion) {
         const InputFecha = document.getElementById("Calendario");
-        const selectedDate = new Date(InputFecha.value); // Convertir la cadena a un objeto Date
+        const selectedDate = new Date(InputFecha.value);
         
-        const day = selectedDate.getDay();  // Obtener el día seleccionado (0 = Domingo, 1 = Lunes, ..., 6 = Sábado)
-        console.log("Días válidos:", condicion);  // Verifica en la consola los días válidos
-        console.log("Día seleccionado:", day);  // Muestra el día seleccionado
+        const day = selectedDate.getDay();  
+        console.log("Días válidos:", condicion);  // Controla días válidos
+        console.log("Día seleccionado:", day);  // Muestra el día 
 
-        // Si el día seleccionado no está en los días válidos, limpiar el campo de fecha y mostrar alerta
+    
         if (!condicion.includes(day)) {
             alert("Por favor, selecciona un día disponible.");
           
-            InputFecha.value = "";  // Limpiar el valor si no es un día permitido
+            InputFecha.value = "";  // Limpiar el valor si no es un día que nos sirva
         }else{
             fetch("procesar.php", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"  // Enviar los datos como JSON
+                "Content-Type": "application/json"  // Enviar los datos
             },
             body: JSON.stringify('RES:TRUE')  // Convertir el objeto a JSON
             })
-            .then(response => response.json())  // Obtener la respuesta en formato JSON
+            .then(response => response.json())  //respuesta en  JSON
             .then(data => {
-                console.log("Respuesta del servidor:", data);  // Mostrar respuesta del servidor en la consola
-                document.getElementById("respuesta").innerHTML = data.message;  // Mostrar mensaje en el HTML
+                console.log("Respuesta del servidor:", data); 
+                document.getElementById("respuesta").innerHTML = data.message;  
             })
             .catch(error => {
                 console.error("Error:", error);  // En caso de error
@@ -239,4 +238,5 @@ if (isset($_POST['DNI_Especialista']))
 </script>
 
 </body>
-</html>
+</html>  
+
