@@ -123,4 +123,12 @@ body.Fondo_pago {
     color: #af684c; 
   }
   
-  
+/*PIE DE PAGINA*/
+/* Footer permanece al final */
+footer {
+  background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
