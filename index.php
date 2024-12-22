@@ -112,6 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) 
 
         // Establecer nueva sesión para el cliente registrado
         $_SESSION['DNI_Cliente'] = $DNI_Cliente;
+        $_SESSION['ID_Cliente'] = $row['ID_Cliente'];
         $_SESSION['Tipo'] = $Tipo; // Cliente
         header("Location: php/ConfAltaUsuario.php?Nombre_Cliente=$Nombre_Cliente");
         exit;
@@ -165,6 +166,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) 
                        header("Location: php/ComoTrabajamos.php");
                    }
                    if ($_SESSION['Tipo'] === 'cliente') {
+                    // Obtener los datos del cliente
+                      
                     header("Location: php/ComoTrabajamos.php");
                 }
                    } else {
