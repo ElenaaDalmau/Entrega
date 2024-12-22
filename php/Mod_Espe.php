@@ -17,40 +17,80 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
-    
+     
     <head>
-         
+        
         <meta charset="utf-8">
         
-        <title> Modificacion Cliente </title>    
+        <title> Login </title>    
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
         
-
+        <!-- Link hacia el archivo de estilos css -->
+        <link rel="stylesheet" href="../css/estilo2.css">
 
         <!-- Link favicon -->
         <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 
-        <!-- Link hacia el archivo de estilos css -->
-        <link rel="stylesheet" href="../css/estilo2.css">
-        <!-- Link hacia el archivo de estilos de bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-        <script src="script.js"></script>
+        <!-- Link para que funcionen los FA FA -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     </head>
     
-    <body class="fondo">
-        <!-- Link hacia las librerias jsp de bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-           
-        <div class="titulo_ME">Modificar Especialista</div>
-        <!-- <div id="contenedor2"> -->
+    <body >
 
-<!-- En este código queremos modificar la tabla de articulos, pero como verás no se muestra nada. -->
+<!--CABECERA-->
+<div id="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="COACHING SL">
+        </div>
+        <nav>
+        <ul>
+                <?php
+                if ($_SESSION['Tipo'] == "cliente") { // Si es Admin, mostrar opciones adicionales
+                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                    echo "<li><a href='Contacto.php'><i class='fa fa-phone-square'></i> <span data-translate='contacto'>Puesta en contacto</span></a></li>";
+                    echo "<li><a href='ListadoEspe.php'><i class='fa fa-address-book'></i> <span data-translate='especialistas'>Especialistas</span></a></li>";
+                    echo "<li><a href='Calendario.php'><i class='fa fa-calendar'></i> <span data-translate='calendario'>Calendario</span></a></li>";
+                    echo '<br>';
+                }
+
+                if ($_SESSION['Tipo'] == "admin") { // Si es Admin, mostrar opciones adicionales
+                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                    echo "<li><a href='FuncionesAdmin.php'><i class='fa fa-address-book'></i><span data-translate='ADMIN'>Admin</span></a></li>";
+                    echo '<br>';
+                }
+                if ($_SESSION['Tipo'] == "espe") { // Si es Especialista, mostrar opciones adicionales
+                    echo "<li><a href='../index.php'><i class='fa fa-home'></i> <span data-translate='inicio'>Inicio</span></a></li>";
+                    echo "<li><a href='ComoTrabajamos.php'><i class='fa fa-briefcase'></i> <span data-translate='como_trabajar'>¿Quiénes somos?</span></a></li>";
+                    echo "<li><a href='FuncionesEspe.php'><i class='fa fa-address-book'></i><span data-translate='espe'>espe</span></a></li>";
+                    echo '<br>';
+                }
+                ?>
+                <li>               
+                    <div class="lenguage-selector">
+                        <label for="lenguage"></label>
+                        <select name="lenguage" id="lenguage">
+                            <option value="es" data-translate="espanol">Español</option>
+                            <option value="ca" data-translate="catalan">Catalan</option>
+                            <option value="en" data-translate="ingles">Inglés</option>
+                            <option value="fr" data-translate="frances">Francés</option>
+                            <option value="it" data-translate="italiano">Italiano</option>
+                            <option value="eu" data-translate="euskera">Euskera</option>
+                            <option value="gl" data-translate="gallego">Gallego</option>
+                            <option value="su" data-translate="sueco">Sueco</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
 
 <?php
 
