@@ -15,6 +15,88 @@
     }   
       
 ?>
+            <!-- REGISTRO DE NUEVO USUARIO -->
+            <div class="form-container sign-up-container">
+                        <?php
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) {
+                        // Obtener y validar datos del formulario
+                        $DNI_Cliente = $_POST['DNI_Cliente'];
+                        $Nombre_Cliente = $_POST['Nombre_Cliente'];
+                        $Apellido_Cliente = $_POST['Apellido_Cliente'];
+                        
+                        $FechaNacimiento_Cliente = $_POST['FechaNacimiento_Cliente'];
+                        
+                        $NumTelefono_Cliente = $_POST['NumTelefono_Cliente'];
+                        $Correo_Cliente = $_POST['Correo_Cliente'];
+                        
+                        $TipoVia_Cliente = $_POST['TipoVia_Cliente'];
+                        $NombreVia_Cliente = $_POST['NombreVia_Cliente'];
+                        $NumeroVia_Cliente = $_POST['NumeroVia_Cliente'];
+                        
+                        $Contrasena_Cliente = $_POST['Contrasena_Cliente'];
+                        $Tipo = "cliente"; // Siempre es cliente para el registro
+
+                        // Consulta para insertar usuario
+                        $sql = "INSERT INTO CLIENTES 
+                                    (DNI_Cliente, Nombre_Cliente, Apellido_Cliente, FechaNacimiento_Cliente, NumTelefono_Cliente, Correo_Cliente, TipoVia_Cliente, NombreVia_Cliente, NumeroVia_Cliente, Contrasena_Cliente, Tipo)
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+                        $stmt = mysqli_prepare($conn, $sql);
+                        mysqli_stmt_bind_param($stmt, 'sssssssssss', $DNI_Cliente, $Nombre_Cliente, $Apellido_Cliente, $FechaNacimiento_Cliente, $NumTelefono_Cliente, $Correo_Cliente, $TipoVia_Cliente, $NombreVia_Cliente, $NumeroVia_Cliente, $Contrasena_Cliente, $Tipo);
+
+                        if (mysqli_stmt_execute($stmt)) {
+                            // Destruir cualquier sesión activa
+                    
+                            // Establecer nueva sesión para el cliente registrado
+                            $_SESSION['DNI_Cliente'] = $DNI_Cliente;
+                            $_SESSION['ID_Cliente'] = $row['ID_Cliente'];
+                            $_SESSION['Tipo'] = $Tipo; // Cliente
+                            header("Location: php/ConfAltaUsuario.php?Nombre_Cliente=$Nombre_Cliente");
+                            exit;
+                        } else {
+                            echo "<script>alert('Error al registrar usuario');</script>";
+                        }
+                    }
+                    ?>
+<?php
+            
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['IniciarSesion'])) {
+                $DNI_Cliente =  $_POST['DNI_Cliente'];
+                $Contrasena_Cliente =  $_POST['Contrasena_Cliente'];
+            
+                $sql = "SELECT * FROM CLIENTES WHERE DNI_Cliente = ?";
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, 's', $DNI_Cliente);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+            
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                    if ($Contrasena_Cliente === $row['Contrasena_Cliente']) {
+                        
+                        // Establecer nueva sesión con los datos del usuario
+                        $_SESSION['DNI_Cliente'] = $row['DNI_Cliente'];
+                        $_SESSION['Tipo'] = $row['Tipo'];
+                        $_SESSION['ID_Cliente'] = $row['ID_Cliente'];
+            
+                        // Redirigir según el tipo de usuario
+                        if ($_SESSION['Tipo'] === 'admin') {
+                            header("Location: php/ComoTrabajamos.php");
+                        }
+                        if ($_SESSION['Tipo'] === 'cliente') {
+                            // Obtener los datos del cliente
+                            
+                            header("Location: php/ComoTrabajamos.php");
+                        }
+                        } else {
+                            header("Location: php/ComoTrabajamos.php");
+                        }
+                        exit;
+                    } else {
+                        echo "<script>alert('Dato incorrecta');</script>";
+                    }
+                }
+            ?>
 
 
 <!DOCTYPE html>
@@ -77,49 +159,6 @@
 
         <div class="gestioncliente" id="container">
 
-            <!-- REGISTRO DE NUEVO USUARIO -->
-            <div class="form-container sign-up-container">
-                        <?php
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['RegistrarUsuario'])) {
-                        // Obtener y validar datos del formulario
-                        $DNI_Cliente = $_POST['DNI_Cliente'];
-                        $Nombre_Cliente = $_POST['Nombre_Cliente'];
-                        $Apellido_Cliente = $_POST['Apellido_Cliente'];
-                        
-                        $FechaNacimiento_Cliente = $_POST['FechaNacimiento_Cliente'];
-                        
-                        $NumTelefono_Cliente = $_POST['NumTelefono_Cliente'];
-                        $Correo_Cliente = $_POST['Correo_Cliente'];
-                        
-                        $TipoVia_Cliente = $_POST['TipoVia_Cliente'];
-                        $NombreVia_Cliente = $_POST['NombreVia_Cliente'];
-                        $NumeroVia_Cliente = $_POST['NumeroVia_Cliente'];
-                        
-                        $Contrasena_Cliente = $_POST['Contrasena_Cliente'];
-                        $Tipo = "cliente"; // Siempre es cliente para el registro
-
-                        // Consulta para insertar usuario
-                        $sql = "INSERT INTO CLIENTES 
-                                    (DNI_Cliente, Nombre_Cliente, Apellido_Cliente, FechaNacimiento_Cliente, NumTelefono_Cliente, Correo_Cliente, TipoVia_Cliente, NombreVia_Cliente, NumeroVia_Cliente, Contrasena_Cliente, Tipo)
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-                        $stmt = mysqli_prepare($conn, $sql);
-                        mysqli_stmt_bind_param($stmt, 'sssssssssss', $DNI_Cliente, $Nombre_Cliente, $Apellido_Cliente, $FechaNacimiento_Cliente, $NumTelefono_Cliente, $Correo_Cliente, $TipoVia_Cliente, $NombreVia_Cliente, $NumeroVia_Cliente, $Contrasena_Cliente, $Tipo);
-
-                        if (mysqli_stmt_execute($stmt)) {
-                            // Destruir cualquier sesión activa
-                    
-                            // Establecer nueva sesión para el cliente registrado
-                            $_SESSION['DNI_Cliente'] = $DNI_Cliente;
-                            $_SESSION['ID_Cliente'] = $row['ID_Cliente'];
-                            $_SESSION['Tipo'] = $Tipo; // Cliente
-                            header("Location: php/ConfAltaUsuario.php?Nombre_Cliente=$Nombre_Cliente");
-                            exit;
-                        } else {
-                            echo "<script>alert('Error al registrar usuario');</script>";
-                        }
-                    }
-                    ?>
 
                 <form class="cliente-contenedor" action="" method="post">
                     <h1 class="titulos">Regístrate</h1>
@@ -140,45 +179,7 @@
 
             <!-- INICIO DE SESIÓN -->
             <div class="form-container login-container">
-                <?php
-            
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['IniciarSesion'])) {
-                $DNI_Cliente =  $_POST['DNI_Cliente'];
-                $Contrasena_Cliente =  $_POST['Contrasena_Cliente'];
-            
-                $sql = "SELECT * FROM CLIENTES WHERE DNI_Cliente = ?";
-                $stmt = mysqli_prepare($conn, $sql);
-                mysqli_stmt_bind_param($stmt, 's', $DNI_Cliente);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-            
-                if ($result && mysqli_num_rows($result) > 0) {
-                    $row = mysqli_fetch_assoc($result);
-                    if ($Contrasena_Cliente === $row['Contrasena_Cliente']) {
-                        
-                        // Establecer nueva sesión con los datos del usuario
-                        $_SESSION['DNI_Cliente'] = $row['DNI_Cliente'];
-                        $_SESSION['Tipo'] = $row['Tipo'];
-                        $_SESSION['ID_Cliente'] = $row['ID_Cliente'];
-            
-                        // Redirigir según el tipo de usuario
-                        if ($_SESSION['Tipo'] === 'admin') {
-                            header("Location: php/ComoTrabajamos.php");
-                        }
-                        if ($_SESSION['Tipo'] === 'cliente') {
-                            // Obtener los datos del cliente
-                            
-                            header("Location: php/ComoTrabajamos.php");
-                        }
-                        } else {
-                            header("Location: php/ComoTrabajamos.php");
-                        }
-                        exit;
-                    } else {
-                        echo "<script>alert('Dato incorrecta');</script>";
-                    }
-                }
-            ?>
+
             
                 <form class="cliente-contenedor" action="" method="post">
                     <h1>Iniciar Sesión</h1>
@@ -271,4 +272,5 @@
     <script src="JS/traducciones.js"></script>
 
 </body>
+
 </html>
