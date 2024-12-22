@@ -10,39 +10,102 @@ body {
 h2 {
     color: #5b4636;
 }
-
-/* Cabecera */
+/*CABECERA - header*/
 #header {
-    background-color: #a4876e;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
+    color: white;
+    display: flex; /* Usamos Flexbox para centrar los elementos */
+    justify-content: space-between; /* Mantiene elementos separados en los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 15px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    height: 100px;
+}
+
+#header .logo {
+    display: flex; /* Activamos Flexbox */
+    justify-content: center; /* Centra horizontalmente el logo */
+    align-items: center; /* Centra verticalmente el logo */
 }
 
 #header .logo img {
-    height: 40px;
+    max-width: 85px; /* Mantiene el tamaño máximo del logo */
+  /*   height: auto; Asegura que la proporción del logo sea correcta */
 }
+
 
 #header nav ul {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    gap: 20px;
 }
 
-#header nav ul li {
-    margin: 0 15px;
-}
-
+/* Ajusta el espaciado entre el icono y el texto */
 #header nav ul li a {
+    display: flex; /* Cambia el comportamiento a flexbox */
+    align-items: center; /* Alinea verticalmente el texto e icono */
+    gap: 8px; /* Agrega un espacio entre el icono y el texto */
     text-decoration: none;
-    color: #fff;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Iconos más pequeños si es necesario */
+#header nav ul li a i {
+    font-size: 1.2rem; /* Ajusta el tamaño de los iconos */
+}
+
+
+#header nav ul li a:hover {
+    background: #e6dfd8;
+    color: #8c7265;
+    transform: scale(1.1);
+}
+
+.lenguage-selector select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #e6dfd8;
+    color: #8c7265;
     font-weight: bold;
 }
+/*PIE DE PAGINA*/
+/* Footer permanece al final */
+footer {
+    background: linear-gradient(to right, #6a5245, rgb(139, 107, 92));
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
 
-.lenguage-selector {
-    margin-left: auto;
+
+
+ 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    #header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
 }
 
 /* Contenedor del formulario */
@@ -141,12 +204,34 @@ button:hover {
     font-weight: bold;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #a4876e;
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* Ajustar el contenedor de especialidades */
+.card#especialidades {
+    width: 80%;  /* Aumentar el ancho */
+    margin: 30px auto;  /* Centrar el contenedor */
+    padding: 40px;  /* Añadir más padding para mayor tamaño */
+    font-size: 18px;  /* Aumentar el tamaño del texto */
+}
+
+/* Aumentar el tamaño de los checkboxes */
+input[type="checkbox"] {
+    transform: scale(1.4);  /* Aumentar tamaño */
+    margin-right: 12px;  /* Separar del texto */
+}
+
+/* Aumentar el espacio entre cada opción */
+fieldset div {
+    margin-bottom: 20px;  /* Más espacio entre filas */
+}
+
+/* Estilizar las leyendas */
+legend {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #5b4636;
+}
+
+/* Hacer los labels más grandes */
+form label {
+    font-size: 18px;
+    line-height: 1.8;  /* Espaciado entre líneas */
 }
