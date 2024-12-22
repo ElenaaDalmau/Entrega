@@ -155,9 +155,12 @@ if (isset($_POST['DNI_Especialista']))
                         $SQL= "INSERT INTO CITAS (Fecha_Cita, Hora_Cita, Coste_Cita, ID_Especialista_Cita, ID_Cliente_Cita) VALUES ('$dia', '$hora', $Coste, $ID_Especialista, $id_cliente);";
                         $result = mysqli_query($conn, $SQL);
                         if ($result){
-                            //$SQL= "DELETE FROM DISPONIBILIDAD_ESPECIALISTA WHERE ID_Especialista_DispoEspe = $ID_Especialista AND Hora_Dispo =  $CitaReservada);";
-                           //$result = mysqli_query($conn, $SQL);
-                       }
+                            // Redirigir a la página de pago
+                        header("Location: Pago.php");
+                        exit;  // Asegura que el script se detenga después de redirigir
+                       } else {
+                        echo "<script>alert('Error al reservar la cita.');</script>";
+                    }
                     }
                 }
             }
